@@ -1,0 +1,85 @@
+<div class="usuarios-container">
+
+    <h2>Gestión de Usuarios</h2>
+
+    <form id="formUsuario">
+
+        <input
+            type="text"
+            id="nombre"
+            placeholder="Nombre"
+            required
+        >
+
+        <input
+            type="text"
+            id="apellido"
+            placeholder="Apellido"
+            required
+        >
+
+        <input
+            type="text"
+            id="usuario"
+            placeholder="Usuario"
+            required
+        >
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Contraseña"
+            required
+        >
+
+        <select id="rol">
+
+            <option value="Administrador">
+                Administrador
+            </option>
+
+            <option value="Vendedor">
+                Vendedor
+            </option>
+
+        </select>
+
+        <button type="submit">
+
+            Guardar Usuario
+
+        </button>
+
+    </form>
+
+    <hr>
+
+    <h3>Usuarios Registrados</h3>
+
+    <table
+    id="tablaUsuarios"
+    border="1"
+>
+
+        <thead>
+
+            <tr>
+
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Usuario</th>
+                <th>Rol</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        </tbody>
+
+    </table>
+
+</div>

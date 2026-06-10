@@ -1,0 +1,112 @@
+<div class="productos-container">
+
+    <h2>Gestión de Productos</h2>
+
+    <form id="formProducto">
+
+        <input
+            type="text"
+            id="codigoBarras"
+            placeholder="Código de Barras"
+            required
+        >
+
+        <input
+            type="text"
+            id="nombreProducto"
+            placeholder="Nombre"
+            required
+        >
+
+        <select id="categoria">
+
+            <option value="Bebidas">
+                Bebidas
+            </option>
+
+            <option value="Golosinas">
+                Golosinas
+            </option>
+
+            <option value="Galletitas">
+                Galletitas
+            </option>
+
+            <option value="Lácteos">
+                Lácteos
+            </option>
+
+            <option value="Limpieza">
+                Limpieza
+            </option>
+
+            <option value="Tabaco">
+                Tabaco
+            </option>
+
+            <option value="Otros">
+                Otros
+            </option>
+
+        </select>
+
+        <input
+            type="number"
+            id="precio"
+            placeholder="Precio"
+            required
+        >
+
+        <input
+            type="number"
+            id="stock"
+            placeholder="Stock"
+            required
+        >
+
+        <input
+            type="number"
+            id="stockMinimo"
+            placeholder="Stock Mínimo"
+            required
+        >
+
+        <button type="submit">
+
+            Guardar Producto
+
+        </button>
+
+    </form>
+
+    <hr>
+
+    <h3>Productos Registrados</h3>
+
+    <table
+        id="tablaProductos"
+        border="1"
+    >
+
+        <thead>
+
+            <tr>
+
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Mínimo</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        </tbody>
+
+    </table>
+
+</div>

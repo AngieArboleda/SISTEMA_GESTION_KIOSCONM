@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "nombre": "Administrador",
+        "apellido": "Sistema",
+        "usuario": "admin",
+        "password": "1234",
+        "rol": "Administrador",
+        "estado": "Activo"
+    }
+]
