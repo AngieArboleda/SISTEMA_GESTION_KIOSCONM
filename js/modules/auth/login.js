@@ -1,6 +1,11 @@
 import { iniciarSesion }
 from "../../core/session.js";
 
+import {
+    obtenerUsuarios
+}
+from "../../services/usuariosService.js";
+
 import { cargarVista }
 from "../../core/router.js";
 
@@ -20,12 +25,9 @@ export async function configurarLogin() {
 
             const password =
                 document.getElementById("password").value;
-
-            const respuesta =
-                await fetch("./data/usuarios.json");
-
-            const usuarios =
-                await respuesta.json();
+                
+                const usuarios =
+    obtenerUsuarios();
 
             const encontrado =
                 usuarios.find(
