@@ -1,0 +1,207 @@
+<div class="inventario-container">
+
+    <div class="inventario-header">
+
+        <div>
+
+            <h2>
+
+                📦 Inventario
+
+            </h2>
+
+            <p>
+
+                Control de stock y reposición
+
+            </p>
+
+        </div>
+
+        <div class="acciones-inventario">
+
+            <button id="btnActualizarStock">
+
+                🔄 Actualizar Stock
+
+            </button>
+
+            <button id="btnExportarInventario">
+
+                📄 Exportar
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="inventario-filtros">
+
+    <input
+        type="text"
+        id="buscarInventario"
+        placeholder="Buscar producto o código..."
+    >
+
+    <button id="btnBuscarInventario">
+
+        🔍 Buscar
+
+    </button>
+
+    <button id="btnLimpiarInventario">
+
+        Limpiar
+
+    </button>
+
+    <div class="inventario-filtros-select">
+
+    <select id="filtroCategoria">
+
+        <option value="">
+            Todas las categorías
+        </option>
+
+    </select>
+
+    <select id="filtroProveedor">
+
+        <option value="">
+            Todos los proveedores
+        </option>
+
+    </select>
+
+    <select id="filtroEstado">
+
+        <option value="">
+            Todos los estados
+        </option>
+
+        <option value="normal">
+            Normal
+        </option>
+
+        <option value="minimo">
+            Stock Mínimo
+        </option>
+
+        <option value="agotado">
+            Sin Stock
+        </option>
+
+    </select>
+
+</div>
+
+</div>
+
+    
+
+    </div>
+
+    <div class="inventario-resumen">
+
+        <div class="card-inventario">
+
+            <h3>
+
+                Total Productos
+
+            </h3>
+
+            <span id="totalProductosInventario">
+
+                0
+
+            </span>
+
+        </div>
+        
+
+        <div class="card-inventario">
+
+            <h3>
+
+                Stock Mínimo
+
+            </h3>
+
+            <span id="productosMinimos">
+
+                0
+
+            </span>
+
+        </div>
+
+        <div class="card-inventario">
+
+            <h3>
+
+                Sin Stock
+
+            </h3>
+
+            <span id="productosAgotados">
+
+                0
+
+            </span>
+
+        </div>
+
+        <div class="card-inventario">
+
+            <h3>
+
+                Valor Inventario
+
+            </h3>
+
+            <span id="valorInventario">
+
+                $0
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="tabla-contenedor">
+
+        <table class="tabla-inventario">
+
+            <thead>
+
+                <tr>
+
+                    
+                    <th>Código</th>
+                    <th>Producto</th>
+                    <th>Categoría</th>
+                    <th>Proveedor</th>
+                    <th>Costo Unit.</th>
+                    <th>Precio Venta</th>
+                    <th>Margen %</th>
+                    <th>Ganancia</th>
+                    <th>Stock</th>
+                    <th>Stock Mín.</th>
+                    <th>Estado</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="tablaInventario">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

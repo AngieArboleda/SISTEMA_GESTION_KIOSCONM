@@ -1,0 +1,232 @@
+.proveedores-container{
+
+    width:100%;
+
+}
+
+.proveedores-header{
+
+    margin-bottom:1.5rem;
+
+}
+
+.proveedores-header h2{
+
+    color:#3B6EA5;
+
+}
+
+.proveedores-header p{
+
+    color:#666;
+
+}
+
+.proveedor-formulario{
+
+    background:white;
+
+    padding:1.5rem;
+
+    border-radius:1rem;
+
+    margin-bottom:1.5rem;
+
+    box-shadow:
+        0 0.25rem 1rem
+        rgba(0,0,0,0.15);
+
+}
+
+.proveedor-formulario h3{
+
+    color:#3B6EA5;
+
+    margin-bottom:1rem;
+
+}
+
+#formProveedor{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                220px,
+                1fr
+            )
+        );
+
+    gap:1rem;
+
+}
+
+#formProveedor input,
+#formProveedor select{
+
+    padding:0.8rem;
+
+    border:1px solid #CCC;
+
+    border-radius:0.5rem;
+
+}
+
+#formProveedor button{
+
+    padding:0.8rem;
+
+    border:none;
+
+    border-radius:0.5rem;
+
+    background:#4682B4;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+}
+
+.busqueda-proveedor{
+
+    display:flex;
+
+    gap:1rem;
+
+    margin-bottom:1.5rem;
+
+}
+
+.busqueda-proveedor input{
+
+    flex:1;
+
+    padding:0.8rem;
+
+    border:1px solid #CCC;
+
+    border-radius:0.5rem;
+
+}
+
+.busqueda-proveedor button{
+
+    padding:0.8rem 1rem;
+
+    border:none;
+
+    border-radius:0.5rem;
+
+    background:#4682B4;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+.resumen-proveedores{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                180px,
+                1fr
+            )
+        );
+
+    gap:1rem;
+
+    margin-bottom:1.5rem;
+
+}
+
+.card-proveedor{
+
+    background:white;
+
+    padding:1.2rem;
+
+    border-radius:1rem;
+
+    text-align:center;
+
+    box-shadow:
+        0 0.25rem 1rem
+        rgba(0,0,0,0.15);
+
+}
+
+.card-proveedor h3{
+
+    color:#3B6EA5;
+
+    margin-bottom:0.8rem;
+
+}
+
+.card-proveedor span{
+
+    font-size:1.8rem;
+
+    font-weight:bold;
+
+}
+
+.tabla-proveedores-container{
+
+    background:white;
+
+    padding:1.5rem;
+
+    border-radius:1rem;
+
+    overflow:auto;
+
+    box-shadow:
+        0 0.25rem 1rem
+        rgba(0,0,0,0.15);
+
+}
+
+.tabla-proveedores{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.tabla-proveedores th{
+
+    background:#3B6EA5;
+
+    color:white;
+
+    padding:0.8rem;
+
+}
+
+.tabla-proveedores td{
+
+    padding:0.8rem;
+
+    border-bottom:1px solid #EEE;
+
+    text-align:center;
+
+}
+
+.tabla-proveedores tr:hover{
+
+    background:#F5F9FF;
+
+}

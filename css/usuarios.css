@@ -1,0 +1,407 @@
+.usuarios-container {
+
+    width: 100%;
+
+}
+
+.usuarios-header {
+
+    margin-bottom: 1rem;
+
+}
+
+.usuarios-header h2 {
+
+    color: #3B6EA5;
+
+    margin-bottom: 0.3rem;
+
+}
+
+.usuarios-header p {
+
+    color: #666;
+
+}
+
+.card-usuario,
+.card-busqueda,
+.tabla-contenedor {
+
+    background: white;
+
+    padding: 1.2rem;
+
+    border-radius: 1rem;
+
+    box-shadow:
+        0 0.25rem 1rem
+        rgba(
+            0,
+            0,
+            0,
+            0.15
+        );
+
+    margin-bottom: 1rem;
+
+}
+
+#formUsuario {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                200px,
+                1fr
+            )
+        );
+
+    gap: 0.8rem;
+
+}
+
+#formUsuario input,
+#formUsuario select {
+
+    padding: 0.65rem 0.8rem;
+
+    border: 1px solid #CCC;
+
+    border-radius: 0.5rem;
+
+    font-size: 0.95rem;
+
+}
+
+#formUsuario button {
+
+    padding: 0.8rem;
+
+    border: none;
+
+    border-radius: 0.7rem;
+
+    background: #4682B4;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+}
+
+#formUsuario button:hover {
+
+    background: #5A9BD5;
+
+}
+
+.permisos-container {
+
+    grid-column: 1 / -1;
+
+    margin-top: 0.5rem;
+
+}
+
+.permisos-container h3 {
+
+    color: #3B6EA5;
+
+    margin-bottom: 0.8rem;
+
+}
+
+.grupo-permisos {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                180px,
+                1fr
+            )
+        );
+
+    gap: 0.4rem;
+
+}
+
+.grupo-permisos label {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.4rem;
+
+    padding: 0.45rem 0.7rem;
+
+    border-radius: 0.5rem;
+
+    background: #F8FBFF;
+
+    border: 1px solid #E5E7EB;
+
+    cursor: pointer;
+
+    font-size: 0.9rem;
+
+    transition: 0.3s;
+
+}
+
+.grupo-permisos label:hover {
+
+    background: #EEF5FF;
+
+}
+
+.grupo-permisos input[type="checkbox"] {
+
+    width: 15px;
+
+    height: 15px;
+
+    cursor: pointer;
+
+}
+
+.card-busqueda {
+
+    display: flex;
+
+    gap: 0.8rem;
+
+    flex-wrap: wrap;
+
+}
+
+.card-busqueda input {
+
+    flex: 1;
+
+    min-width: 250px;
+
+    padding: 0.65rem 0.8rem;
+
+    border: 1px solid #CCC;
+
+    border-radius: 0.5rem;
+
+    font-size: 0.95rem;
+
+}
+
+.card-busqueda button {
+
+    padding: 0.7rem 1.1rem;
+
+    border: none;
+
+    border-radius: 0.7rem;
+
+    background: #4682B4;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+}
+
+.card-busqueda button:hover {
+
+    background: #5A9BD5;
+
+}
+
+.tabla-contenedor {
+
+    overflow-x: auto;
+
+}
+
+.tabla-contenedor h3 {
+
+    color: #3B6EA5;
+
+    margin-bottom: 0.8rem;
+
+}
+
+#tablaUsuarios {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+#tablaUsuarios th {
+
+    background: #3B6EA5;
+
+    color: white;
+
+    padding: 0.75rem;
+
+    white-space: nowrap;
+
+}
+
+#tablaUsuarios td {
+
+    padding: 0.75rem;
+
+    border-bottom: 1px solid #EEE;
+
+    text-align: center;
+
+}
+
+#tablaUsuarios tr:nth-child(even) {
+
+    background: #F8FBFF;
+
+}
+
+#tablaUsuarios tr:hover {
+
+    background: #EEF5FF;
+
+}
+
+.btnEditarUsuario,
+.btnEstado {
+
+    border: none;
+
+    border-radius: 0.5rem;
+
+    padding: 0.45rem 0.7rem;
+
+    cursor: pointer;
+
+    margin: 0 0.15rem;
+
+    transition: 0.3s;
+
+}
+
+.btnEditarUsuario {
+
+    background: #FACC15;
+
+}
+
+.btnEditarUsuario:hover {
+
+    background: #EAB308;
+
+}
+
+.btnEstado {
+
+    background: #EF4444;
+
+    color: white;
+
+}
+
+.btnEstado:hover {
+
+    background: #DC2626;
+
+}
+
+@media (max-width: 768px) {
+
+    .card-busqueda {
+
+        flex-direction: column;
+
+    }
+
+    .grupo-permisos {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+.campo-password{
+
+    position:relative;
+
+    width:100%;
+
+}
+
+.campo-password input{
+
+    width:100%;
+
+    padding-right:3rem;
+
+}
+
+.toggle-password{
+
+    position:absolute;
+
+    right:1rem;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    cursor:pointer;
+
+    user-select:none;
+
+    color:#666;
+
+    font-size:1rem;
+
+}
+
+.toggle-password:hover{
+
+    color:#4682B4;
+
+}
+.btnVerPassword{
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    padding:0;
+
+    margin-left:0.5rem;
+
+}
+
+.btnVerPassword:hover{
+
+    transform:scale(1.1);
+
+}

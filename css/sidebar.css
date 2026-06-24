@@ -1,0 +1,61 @@
+.sidebar {
+
+    position: fixed;
+
+    top: 80px;
+
+    left: 0;
+
+    width: 260px;
+
+    height: calc(100vh - 80px);
+
+    background: #2F4F73;
+
+    padding: 1rem;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.8rem;
+
+    overflow-y: auto;
+
+}
+
+.sidebar button{
+    border:none;
+    padding:1rem;
+    border-radius:0.7rem;
+    background:#4682B4;
+    color:white;
+    text-align:left;
+    cursor:pointer;
+    font-size:1rem;
+    transition:0.3s;
+
+}
+
+.sidebar button:hover{
+    background:#5A9BD5;
+    transform:
+        translateX(
+            5px
+        );
+
+}
+
+.sidebar::-webkit-scrollbar {
+
+    width: 6px;
+
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+
+    background: rgba(255,255,255,0.3);
+
+    border-radius: 10px;
+
+}

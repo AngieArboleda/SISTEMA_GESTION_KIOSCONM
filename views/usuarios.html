@@ -1,85 +1,181 @@
 <div class="usuarios-container">
 
-    <h2>Gestión de Usuarios</h2>
+    <div class="usuarios-header">
 
-    <form id="formUsuario">
+        <div>
+
+            <h2>
+
+                👥 Gestión de Usuarios
+
+            </h2>
+
+            <p>
+
+                Administración de usuarios y permisos
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="card-usuario">
+
+        <form id="formUsuario">
+
+            <input
+                type="text"
+                id="nombre"
+                placeholder="Nombre"
+                required
+            >
+
+            <input
+                type="text"
+                id="apellido"
+                placeholder="Apellido"
+                required
+            >
+
+            <input
+                type="text"
+                id="usuario"
+                placeholder="Usuario"
+                required
+            >
+
+            <div class="campo-password">
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Contraseña"
+                    required
+                >
+
+                <span
+                    id="togglePasswordUsuario"
+                    class="toggle-password"
+                    title="Mostrar contraseña"
+                >
+                    👁
+                </span>
+
+            </div>
+
+            <select id="perfil">
+
+                <option value="Administrador">
+
+                    Administrador
+
+                </option>
+
+                <option value="Vendedor">
+
+                    Vendedor
+
+                </option>
+
+                <option value="Personalizado">
+
+                    Personalizado
+
+                </option>
+
+            </select>
+
+            <div class="permisos-container">
+
+                <h3>
+
+                    Permisos del Usuario
+
+                </h3>
+
+                <div class="grupo-permisos">
+
+                    <label><input type="checkbox" id="crearUsuario"> Crear Usuarios</label>
+                    <label><input type="checkbox" id="editarUsuario"> Editar Usuarios</label>
+                    <label><input type="checkbox" id="desactivarUsuario"> Desactivar Usuarios</label>
+                    <label><input type="checkbox" id="crearProducto"> Crear Productos</label>
+                    <label><input type="checkbox" id="editarProducto"> Editar Productos</label>
+                    <label><input type="checkbox" id="desactivarProducto"> Desactivar Productos</label>
+                    <label><input type="checkbox" id="ventas"> Ventas</label>
+                    <label><input type="checkbox" id="inventario"> Inventario</label>
+                    <label><input type="checkbox" id="proveedores"> Proveedores</label>
+                    <label><input type="checkbox" id="caja"> Caja</label>
+                    <label><input type="checkbox" id="reportes"> Reportes</label>
+
+                </div>
+
+            </div>
+
+            <button type="submit">
+
+                Guardar Usuario
+
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="card-busqueda">
 
         <input
             type="text"
-            id="nombre"
-            placeholder="Nombre"
-            required
+            id="buscarUsuario"
+            placeholder="Buscar usuario"
         >
 
-        <input
-            type="text"
-            id="apellido"
-            placeholder="Apellido"
-            required
-        >
+        <button id="btnBuscarUsuario">
 
-        <input
-            type="text"
-            id="usuario"
-            placeholder="Usuario"
-            required
-        >
-
-        <input
-            type="password"
-            id="password"
-            placeholder="Contraseña"
-            required
-        >
-
-        <select id="rol">
-
-            <option value="Administrador">
-                Administrador
-            </option>
-
-            <option value="Vendedor">
-                Vendedor
-            </option>
-
-        </select>
-
-        <button type="submit">
-
-            Guardar Usuario
+            🔍 Buscar
 
         </button>
 
-    </form>
+        <button id="btnLimpiarBusquedaUsuario">
 
-    <hr>
+            Limpiar
 
-    <h3>Usuarios Registrados</h3>
+        </button>
 
-    <table
-    id="tablaUsuarios"
-    border="1"
->
+    </div>
 
-        <thead>
+    <div class="tabla-contenedor">
 
-            <tr>
+        <h3>
 
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Usuario</th>
-                <th>Rol</th>
-                <th>Estado</th>
-                <th>Acciones</th>
+            Usuarios Registrados
 
-            </tr>
+        </h3>
 
-        </thead>
+        <table id="tablaUsuarios">
 
-        <tbody>
+            <thead>
 
-        </tbody>
+                <tr>
 
-    </table>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Usuario</th>
+                    <th>Contraseña</th>
+                    <th>Perfil</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            </tbody>
+
+        </table>
+
+    </div>
 
 </div>

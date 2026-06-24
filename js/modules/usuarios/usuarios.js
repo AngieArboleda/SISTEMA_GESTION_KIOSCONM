@@ -1,414 +1,743 @@
-console.log("ARCHIVO usuarios.js cargado");
 import {
-
     obtenerUsuarios,
     guardarUsuarios
-
 }
-from "../../services/usuariosService.js";
+from "./usuariosStorage.js";
+
 let usuarioEditando = null;
 
-export function configurarUsuarios() {
-    console.log(
-        "FUNCION configurarUsuarios ejecutada"
-    );
-
-    cargarUsuarios();
+export function configurarUsuarios(){
 
     const formulario =
         document.getElementById(
             "formUsuario"
         );
 
-    formulario.addEventListener(
-        "submit",
-        guardarNuevoUsuario
-    );
-
-}
-function cargarUsuarios() {
-
-    const usuarios =
-        obtenerUsuarios();
-
-    const tbody =
+    const tabla =
         document.querySelector(
             "#tablaUsuarios tbody"
         );
 
-    tbody.innerHTML = "";
+    const buscar =
+    document.getElementById(
+        "buscarUsuario"
+    );
 
-    usuarios.forEach(usuario => {
+const campoPassword =
+    document.getElementById(
+        "password"
+    );
 
-        tbody.innerHTML += `
-        
+const togglePassword =
+    document.getElementById(
+        "togglePasswordUsuario"
+    );
 
-            <tr>
+if(
+    campoPassword &&
+    togglePassword
+){
 
-                <td>${usuario.nombre}</td>
+    togglePassword.addEventListener(
+        "mousedown",
+        () => {
 
-                <td>${usuario.apellido}</td>
+            campoPassword.type =
+                "text";
 
-                <td>${usuario.usuario}</td>
+        }
+    );
 
-                <td>${usuario.rol}</td>
+    togglePassword.addEventListener(
+        "mouseup",
+        () => {
 
-                <td>${usuario.estado}</td>
-                <td>
+            campoPassword.type =
+                "password";
 
-<button
-    class="btnEditar"
-    data-usuario="${usuario.usuario}"
->
+        }
+    );
 
-Editar
+    togglePassword.addEventListener(
+        "mouseleave",
+        () => {
 
-</button>
+            campoPassword.type =
+                "password";
 
-${
-usuario.estado === "Activo"
-
-?
-
-`
-
-<button
-    class="btnDesactivar"
-    data-usuario="${usuario.usuario}"
->
-
-Desactivar
-
-</button>
-
-`
-
-:
-
-`
-
-<button
-    class="btnActivar"
-    data-usuario="${usuario.usuario}"
->
-
-Activar
-
-</button>
-
-`
+        }
+    );
 
 }
+
+listarUsuarios();
+
+    listarUsuarios();
+
+    formulario?.addEventListener(
+        "submit",
+        guardarUsuario
+    );
+
+    document
+        .getElementById(
+            "btnBuscarUsuario"
+        )
+        ?.addEventListener(
+            "click",
+            buscarUsuarios
+        );
+
+    document
+        .getElementById(
+            "btnLimpiarBusquedaUsuario"
+        )
+        ?.addEventListener(
+            "click",
+            () => {
+
+                buscar.value = "";
+
+                listarUsuarios();
+
+            }
+        );
+
+    document
+        .getElementById(
+            "perfil"
+        )
+        ?.addEventListener(
+            "change",
+            aplicarPerfil
+        );
+
+    function guardarUsuario(e){
+
+        e.preventDefault();
+
+        const usuarios =
+            obtenerUsuarios();
+
+        const usuarioInput =
+            document.getElementById(
+                "usuario"
+            ).value.trim();
+
+        const password =
+            document.getElementById(
+                "password"
+            ).value;
+
+        if(
+
+            !usuarioEditando &&
+
+            usuarios.some(
+                usuario =>
+
+                    usuario.usuario ===
+                    usuarioInput
+
+            )
+
+        ){
+
+            alert(
+                "El usuario ya existe"
+            );
+
+            return;
+
+        }
+
+        const permisos = {
+
+            crearUsuario:
+                document.getElementById(
+                    "crearUsuario"
+                ).checked,
+
+            editarUsuario:
+                document.getElementById(
+                    "editarUsuario"
+                ).checked,
+
+            desactivarUsuario:
+                document.getElementById(
+                    "desactivarUsuario"
+                ).checked,
+
+            crearProducto:
+                document.getElementById(
+                    "crearProducto"
+                ).checked,
+
+            editarProducto:
+                document.getElementById(
+                    "editarProducto"
+                ).checked,
+
+            desactivarProducto:
+                document.getElementById(
+                    "desactivarProducto"
+                ).checked,
+
+            ventas:
+                document.getElementById(
+                    "ventas"
+                ).checked,
+
+            inventario:
+                document.getElementById(
+                    "inventario"
+                ).checked,
+
+            proveedores:
+                document.getElementById(
+                    "proveedores"
+                ).checked,
+
+            caja:
+                document.getElementById(
+                    "caja"
+                ).checked,
+
+            reportes:
+                document.getElementById(
+                    "reportes"
+                ).checked
+
+        };
+
+        if(usuarioEditando){
+
+            const usuario =
+                usuarios.find(
+                    usuario =>
+                        usuario.id ===
+                        usuarioEditando
+                );
+
+            usuario.nombre =
+                document.getElementById(
+                    "nombre"
+                ).value;
+
+            usuario.apellido =
+                document.getElementById(
+                    "apellido"
+                ).value;
+
+            usuario.usuario =
+                usuarioInput;
+
+            usuario.perfil =
+                document.getElementById(
+                    "perfil"
+                ).value;
+
+            usuario.permisos =
+                permisos;
+
+            if(
+                password.trim() !== ""
+            ){
+
+                usuario.password =
+                    password;
+
+            }
+
+            usuarioEditando =
+                null;
+
+        }else{
+
+            usuarios.push({
+
+                id:
+                    Date.now(),
+
+                nombre:
+                    document.getElementById(
+                        "nombre"
+                    ).value,
+
+                apellido:
+                    document.getElementById(
+                        "apellido"
+                    ).value,
+
+                usuario:
+                    usuarioInput,
+
+                password:
+                    password,
+
+                perfil:
+                    document.getElementById(
+                        "perfil"
+                    ).value,
+
+                permisos:
+                    permisos,
+
+                estado:
+                    "Activo"
+
+            });
+
+        }
+
+        guardarUsuarios(
+            usuarios
+        );
+
+        formulario.reset();
+
+        listarUsuarios();
+
+    }
+
+    function listarUsuarios(){
+
+        tabla.innerHTML = "";
+
+        obtenerUsuarios()
+            .forEach(
+                usuario => {
+
+                    tabla.innerHTML += `
+
+                    <tr>
+
+                        <td>
+                            ${usuario.nombre}
+                        </td>
+
+                        <td>
+                            ${usuario.apellido}
+                        </td>
+
+                        <td>
+    ${usuario.usuario}
+</td>
+
+<td>
+
+    <span
+        id="password-${usuario.id}"
+    >
+        ********
+    </span>
+
+    <button
+        class="btnVerPassword"
+        data-id="${usuario.id}"
+        data-password="${usuario.password}"
+    >
+        👁
+    </button>
 
 </td>
 
-            </tr>
+<td>
+    ${usuario.perfil}
+</td>
 
-        `;
+                        <td>
+                            ${usuario.estado}
+                        </td>
 
-    });
-    configurarBotonesDesactivar();
-    configurarBotonesActivar();
-    configurarBotonesEditar();
+                        <td>
 
-}
-function guardarNuevoUsuario(e) {
-    console.log(
-        "BOTON GUARDAR PRESIONADO"
-    );
+                            <button
+                                class="btnEditarUsuario"
+                                data-id="${usuario.id}"
+                            >
 
-    e.preventDefault();
+                                ✏️
 
-    const nombre =
-        document.getElementById(
-            "nombre"
-        ).value;
+                            </button>
 
-    const apellido =
-        document.getElementById(
-            "apellido"
-        ).value;
+                            <button
+                                class="btnEstado"
+                                data-id="${usuario.id}"
+                            >
 
-    const usuario =
-        document.getElementById(
-            "usuario"
-        ).value;
+                                ${
+                                    usuario.estado ===
+                                    "Activo"
 
-    const password =
-        document.getElementById(
-            "password"
-        ).value;
-        if (
-    nombre.trim() === "" ||
-    apellido.trim() === "" ||
-    usuario.trim() === "" ||
-    password.trim() === ""
-) {
+                                    ?
 
-    alert(
-        "Todos los campos son obligatorios"
-    );
+                                    "🚫"
 
-    return;
-}
+                                    :
 
-    const rol =
-        document.getElementById(
-            "rol"
-        ).value;
+                                    "✅"
+                                }
 
-    const usuarios =
-        obtenerUsuarios();
+                            </button>
 
-    const existeUsuario =
-    usuarios.some(
-        u =>
-        u.usuario === usuario
-    );
-    
-if (existeUsuario) {
+                        </td>
 
-    alert(
-        "El usuario ya existe"
-    );
+                    </tr>
 
-    return;
-}
-if (usuarioEditando) {
+                    `;
 
-    const usuarioExistente =
+                }
+            );
 
-        usuarios.find(
-            u =>
-            u.usuario ===
-            usuarioEditando
-        );
+        eventosEstado();
 
-    usuarioExistente.nombre =
-        nombre;
+eventosEditar();
 
-    usuarioExistente.apellido =
-        apellido;
+eventosVerPassword();
 
-    usuarioExistente.usuario =
-        usuario;
+    }
 
-    usuarioExistente.password =
-        password;
+    function eventosEditar(){
 
-    usuarioExistente.rol =
-        rol;
+        document
+            .querySelectorAll(
+                ".btnEditarUsuario"
+            )
+            .forEach(
+                boton => {
 
-    guardarUsuarios(
-        usuarios
-    );
-
-    usuarioEditando =
-        null;
-
-    cargarUsuarios();
-
-    document.getElementById(
-        "formUsuario"
-    ).reset();
-
-    return;
-}
-    usuarios.push({
-
-        nombre,
-        apellido,
-        usuario,
-        password,
-        rol,
-        estado: "Activo"
-
-    });
-
-    guardarUsuarios(
-        usuarios
-    );
-
-    cargarUsuarios();
-
-    document.getElementById(
-        "formUsuario"
-    ).reset();
-
-}
-function configurarBotonesDesactivar() {
-
-    const botones =
-
-        document.querySelectorAll(
-            ".btnDesactivar"
-        );
-
-    botones.forEach(
-        boton => {
-
-            boton.addEventListener(
-                "click",
-                () => {
-
-                    desactivarUsuario(
-                        boton.dataset.usuario
+                    boton.addEventListener(
+                        "click",
+                        editarUsuario
                     );
 
                 }
             );
 
-        }
-    );
+    }
+    function eventosVerPassword(){
+
+    document
+        .querySelectorAll(
+            ".btnVerPassword"
+        )
+        .forEach(
+            boton => {
+
+                boton.addEventListener(
+                    "click",
+                    function(){
+
+                        const id =
+                            this.dataset.id;
+
+                        const span =
+                            document.getElementById(
+                                `password-${id}`
+                            );
+
+                        if(
+                            span.textContent ===
+                            "********"
+                        ){
+
+                            span.textContent =
+                                this.dataset.password;
+
+                        }else{
+
+                            span.textContent =
+                                "********";
+
+                        }
+
+                    }
+                );
+
+            }
+        );
 
 }
 
-function configurarBotonesEditar() {
+    function editarUsuario(){
 
-    const botones =
-
-        document.querySelectorAll(
-            ".btnEditar"
-        );
-
-    botones.forEach(
-        boton => {
-
-            boton.addEventListener(
-                "click",
-                () => {
-
-                    editarUsuario(
-                        boton.dataset.usuario
-                    );
-
-                }
+        const id =
+            Number(
+                this.dataset.id
             );
 
+        const usuario =
+            obtenerUsuarios()
+            .find(
+                usuario =>
+                    usuario.id ===
+                    id
+            );
+
+        if(!usuario){
+
+            return;
+
         }
-    );
-
-}
-function desactivarUsuario(
-    usuarioBuscado
-) {
-
-    const usuarios =
-        obtenerUsuarios();
-
-    const usuario =
-        usuarios.find(
-            u =>
-            u.usuario ===
-            usuarioBuscado
-        );
-
-    if (!usuario) return;
-
-    usuario.estado =
-        "Inactivo";
-
-    guardarUsuarios(
-        usuarios
-    );
-
-    cargarUsuarios();
-
-}
-function editarUsuario(
-    usuarioBuscado
-) {
-
-    const usuarios =
-        obtenerUsuarios();
-
-    const usuario =
-        usuarios.find(
-            u =>
-            u.usuario ===
-            usuarioBuscado
-        );
-
-    if (!usuario) return;
-
-    document.getElementById(
-        "nombre"
-    ).value =
-        usuario.nombre;
-
-    document.getElementById(
-        "apellido"
-    ).value =
-        usuario.apellido;
-
-    document.getElementById(
-        "usuario"
-    ).value =
-        usuario.usuario;
-
-    document.getElementById(
-        "password"
-    ).value =
-        usuario.password;
-
-    document.getElementById(
-        "rol"
-    ).value =
-        usuario.rol;
 
         usuarioEditando =
-    usuario.usuario;
+            id;
 
-}
-function configurarBotonesActivar() {
+        document.getElementById(
+            "nombre"
+        ).value =
+            usuario.nombre;
 
-    const botones =
+        document.getElementById(
+            "apellido"
+        ).value =
+            usuario.apellido;
 
-        document.querySelectorAll(
-            ".btnActivar"
+        document.getElementById(
+            "usuario"
+        ).value =
+            usuario.usuario;
+
+        document.getElementById(
+            "password"
+        ).value =
+            "";
+
+        document.getElementById(
+            "perfil"
+        ).value =
+            usuario.perfil;
+
+        Object.keys(
+            usuario.permisos
+        ).forEach(
+            permiso => {
+
+                const checkbox =
+                    document.getElementById(
+                        permiso
+                    );
+
+                if(checkbox){
+
+                    checkbox.checked =
+                        usuario.permisos[
+                            permiso
+                        ];
+
+                }
+
+            }
         );
 
-    botones.forEach(
-        boton => {
+    }
 
-            boton.addEventListener(
-                "click",
-                () => {
+    function eventosEstado(){
 
-                    activarUsuario(
-                        boton.dataset.usuario
+        document
+            .querySelectorAll(
+                ".btnEstado"
+            )
+            .forEach(
+                boton => {
+
+                    boton.addEventListener(
+                        "click",
+                        cambiarEstado
                     );
 
                 }
             );
 
+    }
+
+    function cambiarEstado(){
+
+        const id =
+            Number(
+                this.dataset.id
+            );
+
+        const usuarios =
+            obtenerUsuarios();
+
+        const usuario =
+            usuarios.find(
+                usuario =>
+                    usuario.id ===
+                    id
+            );
+
+        if(
+            usuario.usuario ===
+            "admin"
+        ){
+
+            alert(
+                "No se puede desactivar el administrador principal"
+            );
+
+            return;
+
         }
-    );
 
-}
-function activarUsuario(
-    usuarioBuscado
-) {
+        usuario.estado =
 
-    const usuarios =
-        obtenerUsuarios();
+            usuario.estado ===
+            "Activo"
 
-    const usuario =
-        usuarios.find(
-            u =>
-            u.usuario ===
-            usuarioBuscado
+            ?
+
+            "Inactivo"
+
+            :
+
+            "Activo";
+
+        guardarUsuarios(
+            usuarios
         );
 
-    if (!usuario) return;
+        listarUsuarios();
 
-    usuario.estado =
-        "Activo";
+    }
 
-    guardarUsuarios(
-        usuarios
-    );
+    function buscarUsuarios(){
 
-    cargarUsuarios();
+        const texto =
+            buscar.value
+            .toLowerCase();
+
+        tabla.innerHTML = "";
+
+        obtenerUsuarios()
+
+            .filter(
+                usuario =>
+
+                    usuario.nombre
+                        .toLowerCase()
+                        .includes(
+                            texto
+                        )
+
+                    ||
+
+                    usuario.usuario
+                        .toLowerCase()
+                        .includes(
+                            texto
+                        )
+            )
+
+            .forEach(
+                usuario => {
+
+                    tabla.innerHTML += `
+
+                    <tr>
+
+                        <td>
+                            ${usuario.nombre}
+                        </td>
+
+                        <td>
+                            ${usuario.apellido}
+                        </td>
+
+                        <td>
+                            ${usuario.usuario}
+                        </td>
+
+                        <td>
+                            ${usuario.perfil}
+                        </td>
+
+                        <td>
+                            ${usuario.estado}
+                        </td>
+
+                        <td>
+
+                            -
+
+                        </td>
+
+                    </tr>
+
+                    `;
+
+                }
+            );
+
+    }
+
+    function aplicarPerfil(){
+
+        const perfil =
+            this.value;
+
+        const permisos = [
+
+            "crearUsuario",
+            "editarUsuario",
+            "desactivarUsuario",
+            "crearProducto",
+            "editarProducto",
+            "desactivarProducto",
+            "ventas",
+            "inventario",
+            "proveedores",
+            "caja",
+            "reportes"
+
+        ];
+
+        permisos.forEach(
+            permiso => {
+
+                document.getElementById(
+                    permiso
+                ).checked =
+                    false;
+
+            }
+        );
+
+        if(
+            perfil ===
+            "Administrador"
+        ){
+
+            permisos.forEach(
+                permiso => {
+
+                    document.getElementById(
+                        permiso
+                    ).checked =
+                        true;
+
+                }
+            );
+
+        }
+
+        if(
+            perfil ===
+            "Vendedor"
+        ){
+
+            document.getElementById(
+                "ventas"
+            ).checked = true;
+
+            document.getElementById(
+                "inventario"
+            ).checked = true;
+
+        }
+
+    }
 
 }

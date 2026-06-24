@@ -1,0 +1,38 @@
+.header{
+
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:80px;
+    background:#3B6EA5;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 2rem;
+    color:white;
+    z-index:1000;
+    box-shadow:0 0.25rem 1rem rgba(0,0,0,0.20);
+
+}
+
+.logo{
+    font-size:1.5rem;
+    font-weight:bold;
+
+}
+
+.titulo-sistema{
+    font-size:1.3rem;
+    font-weight:bold;
+
+}
+
+#usuarioActivo{
+    background:white;
+    color:#3B6EA5;
+    padding:0.5rem 1rem;
+    border-radius:2rem;
+    font-weight:bold;
+
+}

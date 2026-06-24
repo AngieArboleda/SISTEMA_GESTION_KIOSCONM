@@ -1,0 +1,198 @@
+<div class="proveedores-container">
+
+    <div class="proveedores-header">
+
+        <div>
+
+            <h2>
+
+                🚚 Proveedores
+
+            </h2>
+
+            <p>
+
+                Gestión de proveedores y cuentas comerciales
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="proveedor-formulario">
+
+        <h3>
+
+            Registrar Proveedor
+
+        </h3>
+
+        <form id="formProveedor">
+
+            <input
+                type="text"
+                id="nombreProveedor"
+                placeholder="Nombre o Razón Social"
+                required
+            >
+
+            <input
+                type="text"
+                id="contactoProveedor"
+                placeholder="Persona de Contacto"
+            >
+
+            <input
+                type="text"
+                id="telefonoProveedor"
+                placeholder="Teléfono"
+            >
+
+            <input
+                type="email"
+                id="emailProveedor"
+                placeholder="Correo Electrónico"
+            >
+
+            <input
+                type="text"
+                id="direccionProveedor"
+                placeholder="Dirección"
+            >
+
+            <input
+                type="text"
+                id="cuitProveedor"
+                placeholder="CUIT / NIT"
+            >
+
+            <select id="estadoProveedor">
+
+                <option value="Activo">
+
+                    Activo
+
+                </option>
+
+                <option value="Inactivo">
+
+                    Inactivo
+
+                </option>
+
+            </select>
+
+            <button type="submit">
+
+                Guardar Proveedor
+
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="busqueda-proveedor">
+
+        <input
+            type="text"
+            id="buscarProveedor"
+            placeholder="Buscar proveedor..."
+        >
+
+        <button id="btnBuscarProveedor">
+
+            🔍 Buscar
+
+        </button>
+
+        <button id="btnLimpiarProveedor">
+
+            Limpiar
+
+        </button>
+
+    </div>
+
+    <div class="resumen-proveedores">
+
+        <div class="card-proveedor">
+
+            <h3>
+
+                Total Proveedores
+
+            </h3>
+
+            <span id="totalProveedores">
+
+                0
+
+            </span>
+
+        </div>
+
+        <div class="card-proveedor">
+
+            <h3>
+
+                Activos
+
+            </h3>
+
+            <span id="proveedoresActivos">
+
+                0
+
+            </span>
+
+        </div>
+
+        <div class="card-proveedor">
+
+            <h3>
+
+                Inactivos
+
+            </h3>
+
+            <span id="proveedoresInactivos">
+
+                0
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="tabla-proveedores-container">
+
+        <table class="tabla-proveedores">
+
+            <thead>
+
+                <tr>
+
+                    <th>Proveedor</th>
+                    <th>Contacto</th>
+                    <th>Teléfono</th>
+                    <th>Email</th>
+                    <th>CUIT</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="tablaProveedores">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

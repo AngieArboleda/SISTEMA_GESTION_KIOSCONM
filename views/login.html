@@ -1,31 +1,73 @@
 <div class="login-container">
 
-    <h2>KIOSCONM</h2>
+    <div class="login-header">
+
+        <h1>AK SOLUTIONS</h1>
+
+        <h2>KIOSCO NM</h2>
+
+        <p>
+            Sistema de Gestión de Ventas e Inventario
+        </p>
+
+    </div>
 
     <form id="loginForm">
 
         <div>
+
             <label>Usuario</label>
+
             <input
                 type="text"
                 id="usuario"
                 required
             >
+
         </div>
 
         <div>
+
             <label>Contraseña</label>
-            <input
-                type="password"
-                id="password"
-                required
-            >
+
+            <div class="campo-password">
+
+                <input
+                    type="password"
+                    id="password"
+                    required
+                >
+
+                <span
+                    id="togglePassword"
+                    class="toggle-password"
+                    title="Mostrar contraseña"
+                >
+                    👁
+                </span>
+
+            </div>
+
         </div>
 
         <button type="submit">
+
             Ingresar
+
         </button>
 
     </form>
+
+    <div class="login-footer">
+
+        <p>
+            Versión 1.0
+        </p>
+
+        <p>
+            © AK SOLUTIONS
+        </p>
+
+    </div>
 
 </div>

@@ -1,117 +1,193 @@
 <div class="productos-container">
 
-    <h2>Gestión de Productos</h2>
+    <div class="encabezado-productos">
 
-    <form id="formProducto">
+        <h2>
 
-        <input
-            type="text"
-            id="codigoBarras"
-            placeholder="Código de Barras"
-            required
-        >
+            📦 Gestión de Productos
 
-        <input
-            type="text"
-            id="nombreProducto"
-            placeholder="Nombre"
-            required
-        >
+        </h2>
 
-        <select id="categoria">
+        <p>
 
-            <option value="Bebidas">
-                Bebidas
-            </option>
+            Sistema KIOSCO NM
 
-            <option value="Golosinas">
-                Golosinas
-            </option>
+        </p>
 
-            <option value="Galletitas">
-                Galletitas
-            </option>
+        <span>
 
-            <option value="Lácteos">
-                Lácteos
-            </option>
+            Administración de Inventario
 
-            <option value="Limpieza">
-                Limpieza
-            </option>
+        </span>
 
-            <option value="Tabaco">
-                Tabaco
-            </option>
+    </div>
 
-            <option value="Bebidas Alcoholicas">
-                Bebidas Alcoholicas
-            </option>
+    <!-- FORMULARIO -->
 
-            <option value="Otros">
-                Otros
-            </option>
+    <div class="card-producto">
 
-        </select>
+        <h3>
 
-        <input
-            type="number"
-            id="precio"
-            placeholder="Precio"
-            required
-        >
+            Nuevo Producto
 
-        <input
-            type="number"
-            id="stock"
-            placeholder="Stock"
-            required
-        >
+        </h3>
 
-        <input
-            type="number"
-            id="stockMinimo"
-            placeholder="Stock Mínimo"
-            required
-        >
+        <form id="formProducto">
 
-        <button type="submit">
+            <input
+                type="text"
+                id="codigoBarras"
+                placeholder="Código de Barras"
+                required
+            >
 
-            Guardar Producto
+            <input
+                type="text"
+                id="nombreProducto"
+                placeholder="Nombre del Producto"
+                required
+            >
 
-        </button>
+            <select id="categoria">
 
-    </form>
+    <option value="Bebidas">Bebidas</option>
+    <option value="Golosinas">Golosinas</option>
+    <option value="Galletitas">Galletitas</option>
+    <option value="Lácteos">Lácteos</option>
+    <option value="Limpieza">Limpieza</option>
+    <option value="Tabaco">Tabaco</option>
+    <option value="Bebidas Alcoholicas">
+        Bebidas Alcohólicas
+    </option>
+    <option value="Otros">Otros</option>
 
-    <hr>
+</select>
 
-    <h3>Productos Registrados</h3>
+<select id="proveedor">
 
-    <table
-        id="tablaProductos"
-        border="1"
-    >
+    <option value="">
 
-        <thead>
+        Seleccionar Proveedor
 
-            <tr>
+    </option>
 
-                <th>Código</th>
-                <th>Nombre</th>
-                <th>Categoría</th>
-                <th>Precio</th>
-                <th>Stock</th>
-                <th>Mínimo</th>
-                <th>Acciones</th>
+</select>
 
-            </tr>
+<input
+    type="number"
+    id="costoUnitario"
+    placeholder="Costo Unitario"
+    min="0"
+    step="0.01"
+    required
+>
+            
 
-        </thead>
+            <input
+                type="number"
+                id="precio"
+                placeholder="Precio Venta"
+                required
+            >
 
-        <tbody>
+            <input
+                type="number"
+                id="stock"
+                placeholder="Stock Actual"
+                required
+            >
 
-        </tbody>
+            <input
+                type="number"
+                id="stockMinimo"
+                placeholder="Stock Mínimo"
+                required
+            >
 
-    </table>
+            <button
+                type="submit"
+                id="btnGuardarProducto"
+            >
+
+                💾 Guardar Producto
+
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- BUSCADOR -->
+
+    <div class="card-busqueda">
+
+        <div class="form-busqueda">
+
+            <input
+                type="text"
+                id="buscarProducto"
+                placeholder="🔍 Buscar producto..."
+            >
+
+            <button
+                type="button"
+                id="btnBuscarProducto"
+                class="btnBuscar"
+            >
+
+                Buscar
+
+            </button>
+
+            <button
+                type="button"
+                id="btnLimpiarBusqueda"
+                class="btnLimpiar"
+            >
+
+                Limpiar
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- TABLA -->
+
+    <div class="tabla-productos-contenedor">
+
+        <h3>
+
+            Productos Registrados
+
+        </h3>
+
+        <table id="tablaProductos">
+
+            <thead>
+
+                <tr>
+
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Categoría</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Mínimo</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            </tbody>
+
+        </table>
+
+    </div>
 
 </div>

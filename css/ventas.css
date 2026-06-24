@@ -1,0 +1,1071 @@
+o.ventas-container{
+
+    width:100%;
+
+    height:100%;
+
+    overflow:hidden;
+
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.ventas-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:1rem;
+    margin-bottom:0.8rem;
+
+}
+
+.ventas-header h2{
+
+    color:#3B6EA5;
+
+}
+
+.venta-info{
+
+    display:flex;
+
+    gap:0.8rem;
+
+    flex-wrap:wrap;
+
+}
+
+.venta-info span{
+
+    background:white;
+
+    padding:0.6rem 1rem;
+
+    border-radius:0.7rem;
+
+    box-shadow:
+        0 0.15rem 0.5rem
+        rgba(0,0,0,0.10);
+
+    font-weight:bold;
+
+    color:#3B6EA5;
+
+}
+
+/* ===========================
+   VENTAS SIMULTÁNEAS
+=========================== */
+
+.ventas-tabs{
+
+    display:flex;
+    gap:0.5rem;
+
+}
+
+.ventas-tabs button{
+
+    padding:0.6rem 1rem;
+
+    border:none;
+
+    border-radius:0.7rem;
+
+    background:#4682B4;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:0.3s;
+
+}
+
+.ventas-tabs button:hover{
+
+    background:#5A9BD5;
+
+}
+
+.ventas-tabs button.activa{
+
+    background:#2F4F73;
+
+    box-shadow:0 0 0 2px white;
+
+}
+
+/* ===========================
+    LAYOUT PRINCIPAL
+=========================== */
+
+.ventas-layout{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        220px;
+
+    gap:0.8rem;
+
+    min-height:calc(100vh - 170px);
+
+}
+
+/* ===========================
+    PANEL VENTA
+=========================== */
+
+.ventas-principal{
+
+    background:white;
+
+    padding:1rem;
+
+    border-radius:1rem;
+
+    box-shadow:
+        0 0.25rem 1rem
+        rgba(0,0,0,0.15);
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+/* ===========================
+    BÚSQUEDA
+=========================== */
+.datos-venta{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:1rem;
+
+}
+
+.datos-venta h3{
+
+    grid-column:1 / -1;
+
+}
+.busqueda-productos{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        auto;
+
+    gap:1rem;
+
+    margin-bottom:1rem;
+
+}
+
+.campo-busqueda{
+
+    .campo-busqueda{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+}
+
+.campo-busqueda label{
+
+    margin-bottom:0.3rem;
+
+    font-weight:bold;
+
+}
+
+.campo-busqueda input{
+
+    padding:0.8rem;
+
+    border:1px solid #D9E2EC;
+
+    border-radius:0.7rem;
+
+    background:#F8FAFC;
+
+}
+
+#btnBuscarProducto{
+
+    align-self:end;
+
+    padding:0.8rem 1rem;
+
+}
+
+/* ===========================
+    CLIENTE
+=========================== */
+
+.cliente-venta{
+
+    margin-bottom:1rem;
+
+}
+
+.cliente-venta select{
+
+    width:100%;
+
+    padding:0.8rem;
+
+    border-radius:0.7rem;
+
+    border:1px solid #D9E2EC;
+
+    background:#F8FAFC;
+
+}
+/* ===========================
+    MÉTODO DE PAGO
+=========================== */
+
+.metodo-pago{
+
+    margin-bottom:1rem;
+
+}
+
+.metodo-pago label{
+
+    display:block;
+
+    margin-bottom:0.3rem;
+
+    font-weight:600;
+
+    color:#3B6EA5;
+
+}
+
+.metodo-pago select{
+
+    width:100%;
+
+    padding:0.8rem;
+
+    border-radius:0.7rem;
+
+    border:1px solid #D9E2EC;
+
+    background:#F8FAFC;
+
+}
+
+.metodo-mixto{
+
+    margin-bottom:1rem;
+
+}
+
+.metodo-mixto label{
+
+    display:block;
+
+    margin-bottom:0.3rem;
+
+    font-weight:600;
+
+    color:#3B6EA5;
+
+}
+
+.metodo-mixto select{
+
+    width:100%;
+
+    padding:0.8rem;
+
+    border-radius:0.7rem;
+
+    border:1px solid #D9E2EC;
+
+    background:#F8FAFC;
+
+}
+/* ===========================
+    TABLA VENTAS
+=========================== */
+
+.tabla-ventas th{
+
+    background:#3B6EA5;
+
+    color:white;
+
+    padding:0.55rem;
+
+    border:1px solid #2F5D91;
+
+    white-space:nowrap;
+
+}
+
+.tabla-ventas table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    border:1px solid #D9E2EC;
+    table-layout:fixed;
+
+}
+
+
+.tabla-ventas th{
+
+    background:#3B6EA5;
+
+    color:white;
+
+    padding:0.7rem;
+
+    white-space:nowrap;
+
+}
+
+.tabla-ventas td{
+
+    padding:0.45rem;
+
+    border:1px solid #D9E2EC;
+
+    text-align:center;
+
+    height:34px;
+
+    background:white;
+
+}
+.tabla-ventas td{
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+
+}
+/* ===========================
+    ANCHOS COLUMNAS
+=========================== */
+
+.tabla-ventas th:nth-child(1),
+.tabla-ventas td:nth-child(1){
+
+    width:70px;
+
+}
+
+.tabla-ventas th:nth-child(2),
+.tabla-ventas td:nth-child(2){
+
+    width:180px;
+
+}
+
+.tabla-ventas th:nth-child(3),
+.tabla-ventas td:nth-child(3){
+
+    width:70px;
+
+}
+
+.tabla-ventas th:nth-child(4),
+.tabla-ventas td:nth-child(4){
+
+    width:80px;
+
+}
+
+.tabla-ventas th:nth-child(5),
+.tabla-ventas td:nth-child(5){
+
+    width:80px;
+
+}
+
+.tabla-ventas th:nth-child(6),
+.tabla-ventas td:nth-child(6){
+
+    width:50px;
+
+}
+
+.tabla-ventas th:nth-child(7),
+.tabla-ventas td:nth-child(7){
+
+    width:60px;
+
+}
+
+.tabla-ventas th:nth-child(8),
+.tabla-ventas td:nth-child(8){
+
+    width:90px;
+
+}
+
+.tabla-ventas th:nth-child(9),
+.tabla-ventas td:nth-child(9){
+
+    width:60px;
+
+}
+
+/* ===========================
+    PANEL DERECHO
+=========================== */
+
+.resumen-venta{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:0.4rem;
+
+}
+
+/* ===========================
+    RESUMEN
+=========================== */
+
+.card-resumen{
+
+    background:white;
+
+    padding:0.8rem;
+
+    border-radius:1rem;
+
+    box-shadow:
+        0 0.25rem 1rem
+        rgba(0,0,0,0.15);
+
+}
+
+.card-resumen h3{
+
+    color:#3B6EA5;
+
+    margin-bottom:0.7rem;
+
+}
+
+.dato-resumen{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:0.4rem;
+
+}
+
+.total-final{
+
+    color:#2E8B57;
+
+    font-size:1.3rem;
+
+    font-weight:bold;
+
+}
+
+/* ===========================
+    BOTONES
+=========================== */
+
+.acciones-venta{
+
+    display:flex;
+
+    flex-direction:column;
+
+gap:0.25rem;
+
+}
+
+.acciones-venta button{
+
+    padding:0.55rem;
+
+    border:none;
+
+    border-radius:0.7rem;
+
+    background:#4682B4;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:0.3s;
+
+}
+
+.acciones-venta button:hover{
+
+    background:#5A9BD5;
+
+}
+
+/* ===========================
+    ACCESOS RÁPIDOS
+=========================== */
+
+.accesos-rapidos{
+
+    background:white;
+
+    padding:0.5rem;
+
+    border-radius:1rem;
+
+    box-shadow:
+        0 0.25rem 1rem
+        rgba(0,0,0,0.15);
+
+    max-height:180px;
+
+    overflow-y:auto;
+
+}
+
+.accesos-rapidos h3{
+
+    color:#3B6EA5;
+
+    margin-bottom:0.7rem;
+
+}
+
+.accesos-rapidos button{
+
+    width:100%;
+
+    margin-bottom:0.2rem;
+
+    padding:0.4rem;
+
+    border:none;
+
+    border-radius:0.5rem;
+
+    background:#EAF3FF;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+.accesos-rapidos button:hover{
+
+    background:#D7E9FF;
+
+}
+
+/* ===========================
+    MODALES
+=========================== */
+
+.modal-overlay{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            0.5
+        );
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.modal-contenedor{
+
+    background:white;
+
+    border-radius:1rem;
+
+    padding:1.5rem;
+
+    box-shadow:
+        0 0.5rem 2rem
+        rgba(
+            0,
+            0,
+            0,
+            0.25
+        );
+
+}
+
+.modal-productos{
+
+    width:95%;
+
+    max-width:1200px;
+
+}
+
+.modal-cobro{
+
+    width:500px;
+
+}
+
+.modal-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:1rem;
+
+}
+
+.modal-header button{
+
+    border:none;
+
+    background:none;
+
+    font-size:1.2rem;
+
+    cursor:pointer;
+
+}
+
+.filtros-productos{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    gap:1rem;
+
+    margin-bottom:1rem;
+
+}
+
+.tabla-modal-productos{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.tabla-modal-productos th{
+
+    background:#3B6EA5;
+
+    color:white;
+
+    padding:0.8rem;
+
+}
+
+.tabla-modal-productos td{
+
+    padding:0.8rem;
+
+    border-bottom:1px solid #EEE;
+
+}
+
+.formulario-cobro{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:0.8rem;
+
+}
+
+.formulario-cobro input,
+.formulario-cobro select,
+.formulario-cobro textarea{
+
+    padding:0.8rem;
+
+    border:1px solid #CCC;
+
+    border-radius:0.5rem;
+
+}
+
+.acciones-cobro{
+
+    margin-top:1rem;
+
+    display:flex;
+
+    gap:1rem;
+
+}
+.texto-recortado{
+
+    display:block;
+
+    max-width:5rem;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+}
+
+#btnBuscarProducto{
+
+    border:none;
+
+    border-radius:0.7rem;
+
+    background:#4682B4;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+}
+
+#btnBuscarProducto:hover{
+
+    background:#5A9BD5;
+
+}
+.campo-busqueda label,
+.cliente-venta label{
+
+    color:#3B6EA5;
+
+    font-weight:600;
+
+}
+
+.btn-eliminar-producto{
+
+    border:none;
+
+    background:#E74C3C;
+
+    color:white;
+
+    width:34px;
+
+    height:34px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    font-size:1rem;
+
+}
+
+.btn-eliminar-producto:hover{
+
+    transform:scale(1.08);
+
+    background:#C0392B;
+
+}
+
+/* ===========================
+    LISTA DE VENTAS
+=========================== */
+
+.item-lista-sugerencias{
+
+    position:absolute;
+
+    top:100%;
+
+    left:0;
+
+    width:100%;
+
+    background:white;
+
+    border:1px solid #d9d9d9;
+
+    border-radius:0.7rem;
+
+    box-shadow:
+        0 0.5rem 1rem
+        rgba(0,0,0,0.15);
+
+    max-height:250px;
+
+    overflow-y:auto;
+
+    z-index:999;
+
+    display:none;
+
+}
+
+.item-sugerencia{
+
+    padding:0.45rem 0.7rem;
+
+    cursor:pointer;
+
+    border-bottom:
+        1px solid #eeeeee;
+
+    min-height:34px;
+
+}
+
+.item-sugerencia:last-child{
+
+    border-bottom:none;
+
+}
+
+.item-sugerencia:hover{
+
+    background:#eaf3ff;
+
+}
+
+.item-sugerencia-nombre{
+
+    font-weight:600;
+
+    color:#333;
+
+}
+
+.item-sugerencia-codigo{
+
+    font-size:0.85rem;
+
+    color:#777;
+
+}
+.sugerencia-fila{
+
+    display:grid;
+
+    grid-template-columns:
+        120px
+        1fr;
+
+    align-items:center;
+
+    gap:0.6rem;
+
+}
+
+.sugerencia-codigo{
+
+    font-size:0.85rem;
+
+    font-weight:600;
+
+    color:#666;
+
+}
+
+.sugerencia-producto{
+
+    font-size:0.90rem;
+
+    font-weight:500;
+
+    color:#222;
+
+}
+
+/* ===========================
+    MODAL BUSCADOR
+=========================== */
+
+.modal-busqueda{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+        rgba(0,0,0,0.25);
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    padding-top:300px;
+
+    z-index:9999;
+
+}
+
+.modal-busqueda-contenido{
+
+    background:white;
+
+    width:800px;
+
+    max-width:90%;
+    max-height:500px;
+    overflow:hidden;
+
+    border-radius:1rem;
+
+    padding:1rem;
+
+    box-shadow:
+        0 10px 25px
+        rgba(0,0,0,0.20);
+
+}
+
+.modal-busqueda-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:1rem;
+
+}
+
+.modal-busqueda-header button{
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    font-size:1.2rem;
+
+}
+
+.tabla-busqueda{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.tabla-busqueda th{
+
+    background:#3B6EA5;
+
+    color:white;
+
+    padding:0.7rem;
+
+}
+
+.tabla-busqueda td{
+
+    padding:0.6rem;
+
+    border-bottom:
+        1px solid #dddddd;
+
+}
+
+.tabla-busqueda tr{
+
+    cursor:pointer;
+
+}
+
+.tabla-busqueda tr:hover{
+
+    background:#eef5ff;
+
+}
+
+.tabla-busqueda tbody{
+
+    display:block;
+
+    max-height:320px;
+
+    overflow-y:auto;
+
+}
+
+.tabla-busqueda thead,
+.tabla-busqueda tbody tr{
+
+    display:table;
+
+    width:100%;
+
+    table-layout:fixed;
+
+}

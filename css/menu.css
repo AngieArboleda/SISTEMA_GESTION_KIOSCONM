@@ -1,0 +1,107 @@
+.sidebar {
+    width: 250px;
+    background: #4682B4;
+    color: white;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #5A9BD5;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.sidebar button:hover {
+    background: #74B3E7;
+}   .menu-container{
+    background:#F0F8FF;
+    width:90%;
+    max-width:900px;
+    padding:2rem;
+    border-radius:1rem;
+    box-shadow:
+        0 0.25rem 1rem
+        rgba(
+            0,
+            0,
+            0,
+            0.2
+        );
+
+}
+
+.menu-container h1{
+
+    text-align:center;
+    color:#4682B4;
+    margin-bottom:1rem;
+
+}
+
+.menu-container h3{
+    text-align:center;
+    margin-bottom:1rem;
+
+}
+
+#infoUsuario{
+
+    background:#EAF3FF;
+    padding:1rem;
+    border-radius:0.5rem;
+    margin-bottom:1rem;
+
+}
+
+.menu-opciones{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                200px,
+                1fr
+            )
+        );
+
+    gap:1rem;
+
+}
+
+.menu-opciones button{
+    padding:1rem;
+    border:none;
+    border-radius:0.75rem;
+    background:#4682B4;
+    color:white;
+    font-size:1rem;
+    font-weight:bold;
+    cursor:pointer;
+
+}
+
+.menu-opciones button:hover{
+    background:#5A9BD5;
+}
+
+.logoSistema{
+    width:6rem;
+    display:block;
+    margin:auto;
+    margin-bottom:1rem;
+
+}

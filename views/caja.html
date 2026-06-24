@@ -1,0 +1,276 @@
+<div class="caja-container">
+
+    <div class="caja-header">
+
+        <div>
+
+            <h2>🏦 Caja</h2>
+
+            <p>Apertura, movimientos y cierre de caja</p>
+
+        </div>
+
+        <div class="acciones-caja">
+
+            <span
+                class="estado-caja-abierta"
+                id="estadoCaja"
+            >
+
+                🟢 Caja Abierta
+
+            </span>
+
+            <button id="btnCerrarCaja">
+
+                🔒 Cerrar Caja
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="resumen-caja">
+
+        <div class="card-caja">
+
+            <h3>Saldo Inicial</h3>
+
+            <span id="saldoInicial">
+
+                $0
+
+            </span>
+
+        </div>
+
+        <div class="card-caja">
+
+            <h3>Ingresos</h3>
+
+            <span id="totalIngresos">
+
+                $0
+
+            </span>
+
+        </div>
+
+        <div class="card-caja">
+
+            <h3>Egresos</h3>
+
+            <span id="totalEgresos">
+
+                $0
+
+            </span>
+
+        </div>
+
+        <div class="card-caja">
+
+            <h3>Saldo Actual</h3>
+
+            <span id="saldoActual">
+
+                $0
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="metodos-pago">
+
+        <div class="card-metodo">
+
+            <h4>💵 Efectivo</h4>
+
+            <span id="totalEfectivo">$0</span>
+
+        </div>
+
+        <div class="card-metodo">
+
+            <h4>💳 Tarjeta</h4>
+
+            <span id="totalTarjeta">$0</span>
+
+        </div>
+
+        <div class="card-metodo">
+
+            <h4>📱 Mercado Pago</h4>
+
+            <span id="totalMP">$0</span>
+
+        </div>
+
+        <div class="card-metodo">
+
+            <h4>🔄 Mixto</h4>
+
+            <span id="totalMixto">$0</span>
+
+        </div>
+
+    </div>
+
+    <div class="movimiento-caja">
+
+        <h3>Registrar Movimiento</h3>
+
+        <div class="formulario-movimiento">
+
+            <select id="tipoMovimiento">
+
+                <option value="">
+                    Tipo
+                </option>
+
+                <option value="ingreso">
+                    Ingreso
+                </option>
+
+                <option value="egreso">
+                    Egreso
+                </option>
+
+            </select>
+
+            <select id="motivoMovimiento">
+
+                <option value="">
+                    Motivo
+                </option>
+
+                <option>
+                    Venta
+                </option>
+
+                <option>
+                    Pago Proveedor
+                </option>
+
+                <option>
+                    Servicio
+                </option>
+
+                <option>
+                    Gasto Operativo
+                </option>
+
+                <option>
+                    Otro
+                </option>
+
+            </select>
+
+            <select id="proveedorMovimiento">
+
+                <option>
+                    Proveedor
+                </option>
+
+            </select>
+
+            <input
+                type="number"
+                id="montoMovimiento"
+                placeholder="Monto"
+            >
+
+            <input
+                type="text"
+                id="descripcionMovimiento"
+                placeholder="Descripción"
+            >
+
+            <button id="btnRegistrarMovimiento">
+
+                Registrar
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="tabla-caja-contenedor">
+
+        <h3>Movimientos del Día</h3>
+
+        <table class="tabla-caja">
+
+            <thead>
+
+                <tr>
+
+                    <th>Hora</th>
+                    <th>Tipo</th>
+                    <th>Motivo</th>
+                    <th>Proveedor</th>
+                    <th>Monto</th>
+                    <th>Usuario</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="tablaMovimientosCaja">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <div class="cierre-caja">
+
+        <h3>Cierre de Caja</h3>
+
+        <div class="datos-cierre">
+
+            <div>
+
+                <label>Saldo Esperado</label>
+
+                <input
+                    type="text"
+                    id="saldoEsperado"
+                    readonly
+                >
+
+            </div>
+
+            <div>
+
+                <label>Dinero Contado</label>
+
+                <input
+                    type="number"
+                    id="dineroContado"
+                >
+
+            </div>
+
+            <div>
+
+                <label>Diferencia</label>
+
+                <input
+                    type="text"
+                    id="diferenciaCaja"
+                    readonly
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

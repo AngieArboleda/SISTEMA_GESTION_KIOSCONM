@@ -4,93 +4,112 @@ import {
 }
 from "../../core/session.js";
 
-import { permisos }
+import {
+    permisos
+}
 from "../../core/permissions.js";
 
-import { cargarVista }
+import {
+    cargarVista
+}
 from "../../core/router.js";
 
 export function configurarMenu() {
-    const usuario = obtenerSesion();
+
+    const usuario =
+        obtenerSesion();
+
     const permisosUsuario =
-    permisos[usuario.rol];
+        permisos[usuario.rol];
+
     const modulos = [
-    "usuarios",
-    "productos",
-    "ventas",
-    "stock",
-    "proveedores",
-    "caja",
-    "reportes"
-];
 
-modulos.forEach(modulo => {
+        "usuarios",
+        "productos",
+        "ventas",
+        "stock",
+        "proveedores",
+        "caja",
+        "reportes"
 
-    if(
-        !permisosUsuario.includes(modulo)
-    ){
+    ];
 
-        document.getElementById(
-            modulo
-        ).disabled = true;
+    modulos.forEach(
+        modulo => {
 
-    }
+            if (
+                !permisosUsuario.includes(
+                    modulo
+                )
+            ) {
 
-});
-document
-    .getElementById("usuarios")
-    ?.addEventListener(
-        "click",
-        () => {
+                document.getElementById(
+                    modulo
+                ).disabled = true;
 
-            cargarVista(
-                "./views/usuarios.html"
-            );
+            }
 
         }
     );
-    
+
     document
-    .getElementById("productos")
-    ?.addEventListener(
-        "click",
-        () => {
+        .getElementById(
+            "usuarios"
+        )
+        ?.addEventListener(
+            "click",
+            () => {
 
-            cargarVista(
-                "./views/productos.html"
-            );
+                cargarVista(
+                    "./views/usuarios.html"
+                );
 
-        }
-    );
-
-document.getElementById(
-    "nombreUsuario"
-).textContent =
-    usuario.nombre +
-    " " +
-    usuario.apellido;
-
-document.getElementById(
-    "rolUsuario"
-).textContent =
-    usuario.rol;
-
-    const botonCerrar =
-        document.getElementById(
-            "btnCerrarSesion"
+            }
         );
 
-    botonCerrar.addEventListener(
-        "click",
-        () => {
+    document
+        .getElementById(
+            "productos"
+        )
+        ?.addEventListener(
+            "click",
+            () => {
 
-            cerrarSesion();
+                cargarVista(
+                    "./views/productos.html"
+                );
 
-            cargarVista(
-                "./views/login.html"
-            );
+            }
+        );
 
-        }
-    );
+    document.getElementById(
+        "nombreUsuario"
+    ).textContent =
+
+        usuario.nombre +
+        " " +
+        usuario.apellido;
+
+    document.getElementById(
+        "rolUsuario"
+    ).textContent =
+        usuario.rol;
+
+    document
+        .getElementById(
+            "btnCerrarSesion"
+        )
+        .addEventListener(
+            "click",
+            () => {
+
+                cerrarSesion();
+
+                cargarVista(
+                    "./views/login.html"
+                );
+
+            }
+        );
 
 }

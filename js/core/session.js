@@ -13,4 +13,4 @@ export function obtenerSesion() {
 
 export function cerrarSesion() {
     localStorage.removeItem("sesionActiva");
-}
+} 

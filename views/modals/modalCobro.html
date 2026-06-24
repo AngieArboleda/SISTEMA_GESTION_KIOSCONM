@@ -1,0 +1,158 @@
+<div class="modal-overlay" id="modalCobro">
+
+    <div class="modal-contenedor modal-cobro">
+
+        <div class="modal-header">
+
+            <h2>
+
+                💵 Cobro de Venta
+
+            </h2>
+
+            <button id="cerrarModalCobro">
+
+                ✖
+
+            </button>
+
+        </div>
+
+        <div class="resumen-cobro">
+
+            <div class="fila-resumen">
+
+                <span>Total Venta</span>
+
+                <strong id="totalCobro">
+
+                    $0
+
+                </strong>
+
+            </div>
+
+            <div class="fila-resumen">
+
+                <span>Descuento</span>
+
+                <strong id="descuentoCobro">
+
+                    $0
+
+                </strong>
+
+            </div>
+
+        </div>
+
+        <div class="formulario-cobro">
+
+            <label>
+
+                Método de Pago
+
+            </label>
+
+            <select id="metodoPago">
+
+    <option>
+
+        Efectivo
+
+    </option>
+
+    <option>
+
+        Débito
+
+    </option>
+
+    <option>
+
+        Crédito
+
+    </option>
+
+    <option>
+
+        Transferencia
+
+    </option>
+
+    <option>
+
+        Mercado Pago
+
+    </option>
+
+    <option>
+
+        Pago Mixto
+
+    </option>
+
+</select>
+
+<div
+    id="pagoMixto"
+    class="pago-mixto"
+>
+
+    <label>
+
+        Efectivo
+
+    </label>
+
+    <input
+        type="number"
+        id="montoEfectivo"
+    >
+
+    <label>
+
+        Segundo Medio de Pago
+
+    </label>
+
+    <select id="segundoMetodoPago">
+
+        <option>
+
+            Débito
+
+        </option>
+
+        <option>
+
+            Crédito
+
+        </option>
+
+        <option>
+
+            Transferencia
+
+        </option>
+
+        <option>
+
+            Mercado Pago
+
+        </option>
+
+    </select>
+
+    <label>
+
+        Monto Segundo Pago
+
+    </label>
+
+    <input
+        type="number"
+        id="montoSegundoPago"
+    >
+
+</div>

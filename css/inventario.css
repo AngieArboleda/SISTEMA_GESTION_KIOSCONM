@@ -1,0 +1,352 @@
+.inventario-container{
+
+    width:100%;
+
+}
+
+.inventario-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:1.5rem;
+    flex-wrap:wrap;
+    gap:1rem;
+
+}
+
+.inventario-header h2{
+
+    color:#3B6EA5;
+    margin-bottom:0.3rem;
+
+}
+
+.inventario-header p{
+
+    color:#666;
+
+}
+
+.acciones-inventario{
+
+    display:flex;
+    gap:1rem;
+    flex-wrap:wrap;
+
+}
+
+.acciones-inventario button{
+
+    padding:0.8rem 1rem;
+    border:none;
+    border-radius:0.7rem;
+    background:#4682B4;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+
+}
+
+.acciones-inventario button:hover{
+
+    background:#5A9BD5;
+
+}
+
+.inventario-filtros{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr auto auto;
+
+    gap:1rem;
+
+    margin-bottom:1rem;
+
+}
+
+.inventario-filtros input,
+.inventario-filtros select{
+
+    padding:0.8rem;
+
+    border:1px solid #CCC;
+
+    border-radius:0.5rem;
+
+}
+
+.inventario-resumen{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    gap:1rem;
+
+    margin-bottom:1rem;
+
+}
+
+.card-inventario{
+
+    background:white;
+
+    border-radius:1rem;
+
+    padding:1rem;
+
+    text-align:center;
+
+    box-shadow:
+        0 0.25rem 1rem
+        rgba(
+            0,
+            0,
+            0,
+            0.15
+        );
+
+}
+
+.card-inventario h3{
+
+    color:#3B6EA5;
+
+    margin-bottom:0.5rem;
+
+    font-size:1.1rem;
+
+}
+
+.card-inventario span{
+
+    font-size:1.8rem;
+
+    font-weight:bold;
+
+}
+
+.tabla-contenedor{
+
+    background:white;
+
+    border-radius:1rem;
+
+    padding:1rem;
+
+    box-shadow:
+        0 0.25rem 1rem
+        rgba(
+            0,
+            0,
+            0,
+            0.15
+        );
+
+    overflow-x:auto;
+
+}
+
+.tabla-inventario{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.tabla-inventario th{
+
+    background:#3B6EA5;
+
+    color:white;
+
+    padding:0.6rem;
+
+    white-space:nowrap;
+
+    font-size:0.9rem;
+
+}
+
+.tabla-inventario td{
+
+    padding:0.5rem;
+
+    border-bottom:1px solid #EEE;
+
+    text-align:center;
+
+    font-size:0.9rem;
+
+}
+
+.tabla-inventario tbody tr:hover{
+
+    background:#F5F9FF;
+
+}
+
+.estado-normal{
+
+    color:#2E8B57;
+
+    font-weight:bold;
+
+}
+
+.estado-minimo{
+
+    color:#E67E22;
+
+    font-weight:bold;
+
+}
+
+.estado-agotado{
+
+    color:#C0392B;
+
+    font-weight:bold;
+
+}
+
+@media(max-width:1200px){
+
+    .inventario-resumen{
+
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .inventario-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .inventario-filtros{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .inventario-resumen{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+#btnBuscarInventario,
+#btnLimpiarInventario{
+
+    padding:0.8rem 1.2rem;
+
+    min-width:120px;
+
+    border:none;
+
+    border-radius:0.7rem;
+
+    background:#4682B4;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+#btnBuscarInventario:hover,
+#btnLimpiarInventario:hover{
+
+    background:#5A9BD5;
+
+    transform:translateY(-2px);
+
+}
+.inventario-filtros{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr auto auto;
+
+    gap:1rem;
+
+    margin-bottom:1rem;
+
+}
+
+.inventario-filtros-select{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:1rem;
+
+    margin-bottom:1.5rem;
+
+}
+
+.inventario-filtros-select select{
+
+    width:100%;
+
+    padding:0.8rem;
+
+    border:1px solid #CCC;
+
+    border-radius:0.5rem;
+
+}
+
+.tabla-inventario{
+
+    border-collapse:collapse;
+
+}
+
+.tabla-inventario th,
+.tabla-inventario td{
+
+    border:1px solid #E5E7EB;
+
+}
+
+.texto-recortado{
+
+    max-width:7.1rem;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+}

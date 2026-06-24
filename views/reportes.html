@@ -1,0 +1,291 @@
+<div class="reportes-container">
+
+    <div class="reportes-header">
+
+        <div>
+
+            <h2>
+
+                📊 Reportes
+
+            </h2>
+
+            <p>
+
+                Consultas y análisis del sistema
+
+            </p>
+
+        </div>
+
+        <div class="acciones-reportes">
+
+            <button id="btnExportarPDF">
+
+                📄 Exportar PDF
+
+            </button>
+
+            <button id="btnExportarExcel">
+
+                📊 Exportar Excel
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="filtros-reportes">
+
+        <select id="tipoReporte">
+
+            <option value="">
+
+                Tipo de reporte
+
+            </option>
+
+            <option value="ventas">
+
+                Ventas
+
+            </option>
+
+            <option value="caja">
+
+                Caja
+
+            </option>
+
+            <option value="inventario">
+
+                Inventario
+
+            </option>
+
+            <option value="productos">
+
+                Productos más vendidos
+
+            </option>
+
+            <option value="rentabilidad">
+
+                Rentabilidad
+
+            </option>
+
+            <option value="movimientos">
+
+                Movimientos de Caja
+
+            </option>
+
+        </select>
+
+        <input
+            type="date"
+            id="fechaDesde"
+        >
+
+        <input
+            type="date"
+            id="fechaHasta"
+        >
+
+        <select id="usuarioReporte">
+
+            <option value="">
+
+                Todos los vendedores
+
+            </option>
+
+        </select>
+
+        <select id="cajaReporte">
+
+            <option value="">
+
+                Todas las cajas
+
+            </option>
+
+            <option value="principal">
+
+                Caja Principal
+
+            </option>
+
+        </select>
+
+        <select id="turnoReporte">
+
+            <option value="">
+
+                Todos los turnos
+
+            </option>
+
+            <option value="mañana">
+
+                Mañana
+
+            </option>
+
+            <option value="tarde">
+
+                Tarde
+
+            </option>
+
+            <option value="noche">
+
+                Noche
+
+            </option>
+
+        </select>
+
+        <input
+            type="text"
+            id="numeroVenta"
+            placeholder="N° Venta"
+        >
+
+        <select id="estadoVenta">
+
+            <option value="">
+
+                Todos los estados
+
+            </option>
+
+            <option value="completada">
+
+                Completadas
+
+            </option>
+
+            <option value="anulada">
+
+                Anuladas
+
+            </option>
+
+        </select>
+
+        <button id="btnGenerarReporte">
+
+            🔍 Generar Reporte
+
+        </button>
+
+    </div>
+
+    <div class="resumen-reportes">
+
+        <div class="card-reporte">
+
+            <h3>
+
+                Total Ventas
+
+            </h3>
+
+            <span id="totalVentas">
+
+                $0
+
+            </span>
+
+        </div>
+
+        <div class="card-reporte">
+
+            <h3>
+
+                Cantidad Ventas
+
+            </h3>
+
+            <span id="cantidadVentas">
+
+                0
+
+            </span>
+
+        </div>
+
+        <div class="card-reporte">
+
+            <h3>
+
+                Productos Vendidos
+
+            </h3>
+
+            <span id="productosVendidos">
+
+                0
+
+            </span>
+
+        </div>
+
+        <div class="card-reporte">
+
+            <h3>
+
+                Rentabilidad
+
+            </h3>
+
+            <span id="rentabilidadTotal">
+
+                $0
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="tabla-reportes-contenedor">
+
+        <h3>
+
+            Resultados
+
+        </h3>
+
+        <table class="tabla-reportes">
+
+            <thead>
+
+                <tr>
+
+                    <th>Fecha</th>
+                    <th>N° Venta</th>
+                    <th>Usuario</th>
+                    <th>Caja</th>
+                    <th>Turno</th>
+                    <th>Cliente</th>
+                    <th>Método Pago</th>
+                    <th>Total</th>
+                    <th>Estado</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="tablaReportes">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

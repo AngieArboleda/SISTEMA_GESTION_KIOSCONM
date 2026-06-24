@@ -1,4 +1,6 @@
-import { iniciarSesion }
+import {
+    iniciarSesion
+}
 from "../../core/session.js";
 
 import {
@@ -6,52 +8,128 @@ import {
 }
 from "../../services/usuariosService.js";
 
-import { cargarVista }
+import {
+    cargarVista
+}
 from "../../core/router.js";
 
 export async function configurarLogin() {
 
     const formulario =
-        document.getElementById("loginForm");
+        document.getElementById(
+            "loginForm"
+        );
 
-    formulario.addEventListener(
+    const campoPassword =
+        document.getElementById(
+            "password"
+        );
+
+    const togglePassword =
+        document.getElementById(
+            "togglePassword"
+        );
+
+    if (
+        campoPassword &&
+        togglePassword
+    ) {
+
+        togglePassword.addEventListener(
+            "mousedown",
+            () => {
+
+                campoPassword.type =
+                    "text";
+
+            }
+        );
+
+        togglePassword.addEventListener(
+            "mouseup",
+            () => {
+
+                campoPassword.type =
+                    "password";
+
+            }
+        );
+
+        togglePassword.addEventListener(
+            "mouseleave",
+            () => {
+
+                campoPassword.type =
+                    "password";
+
+            }
+        );
+
+    }
+
+    formulario?.addEventListener(
         "submit",
-        async (e) => {
+        (e) => {
 
             e.preventDefault();
 
             const usuario =
-                document.getElementById("usuario").value;
+                document
+                    .getElementById(
+                        "usuario"
+                    )
+                    .value
+                    .trim();
 
             const password =
-                document.getElementById("password").value;
-                
-                const usuarios =
-    obtenerUsuarios();
+                document
+                    .getElementById(
+                        "password"
+                    )
+                    .value;
+
+            const usuarios =
+                obtenerUsuarios();
 
             const encontrado =
                 usuarios.find(
                     u =>
-                    u.usuario === usuario &&
-                    u.password === password &&
-                    u.estado === "Activo"
+
+                        u.usuario ===
+                        usuario
+
+                        &&
+
+                        u.password ===
+                        password
+
+                        &&
+
+                        u.estado ===
+                        "Activo"
                 );
 
-            if(!encontrado){
+            if (
+                !encontrado
+            ) {
 
                 alert(
                     "Usuario o contraseña incorrectos"
                 );
 
                 return;
+
             }
 
-        iniciarSesion(encontrado);
+            iniciarSesion(
+                encontrado
+            );
 
-cargarVista(
-    "./views/menu.html"
-);
+            cargarVista(
+                "./views/layout.html"
+            );
 
         }
     );
+
 }

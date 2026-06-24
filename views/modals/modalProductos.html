@@ -1,0 +1,112 @@
+<div class="modal-overlay" id="modalProductos">
+
+    <div class="modal-contenedor modal-productos">
+
+        <div class="modal-header">
+
+            <h2>
+
+                📦 Buscar Producto
+
+            </h2>
+
+            <button id="cerrarModalProductos">
+
+                ✖
+
+            </button>
+
+        </div>
+
+        <div class="filtros-productos">
+
+            <input
+                type="text"
+                id="buscarCodigo"
+                placeholder="Código de barras"
+            >
+
+            <input
+                type="text"
+                id="buscarNombre"
+                placeholder="Nombre del producto"
+            >
+
+            <select id="buscarCategoria">
+
+                <option value="">
+
+                    Todas las categorías
+
+                </option>
+
+            </select>
+
+            <select id="buscarEstado">
+
+                <option value="">
+
+                    Todos los estados
+
+                </option>
+
+                <option value="normal">
+
+                    Normal
+
+                </option>
+
+                <option value="stockMinimo">
+
+                    Stock Mínimo
+
+                </option>
+
+                <option value="sinStock">
+
+                    Sin Stock
+
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="resultado-info">
+
+            <span id="totalProductosEncontrados">
+
+                0 productos encontrados
+
+            </span>
+
+        </div>
+
+        <table class="tabla-modal-productos">
+
+            <thead>
+
+                <tr>
+
+                    <th>Foto</th>
+                    <th>Código</th>
+                    <th>Producto</th>
+                    <th>Categoría</th>
+                    <th>Stock</th>
+                    <th>Precio</th>
+                    <th>Estado</th>
+                    <th>Acción</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="tablaProductosModal">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

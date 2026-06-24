@@ -1,0 +1,252 @@
+.reportes-container{
+
+    width:100%;
+
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.reportes-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:1.5rem;
+    flex-wrap:wrap;
+    gap:1rem;
+
+}
+
+.reportes-header h2{
+
+    color:#3B6EA5;
+    margin-bottom:0.3rem;
+
+}
+
+.reportes-header p{
+
+    color:#666;
+
+}
+
+.acciones-reportes{
+
+    display:flex;
+    gap:1rem;
+    flex-wrap:wrap;
+
+}
+
+.acciones-reportes button{
+
+    padding:0.9rem 1.2rem;
+    border:none;
+    border-radius:0.7rem;
+    background:#4682B4;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+
+}
+
+.acciones-reportes button:hover{
+
+    background:#5A9BD5;
+    transform:translateY(-2px);
+
+}
+
+/* ==========================
+   FILTROS
+========================== */
+
+.filtros-reportes{
+
+    background:white;
+    padding:1.5rem;
+    border-radius:1rem;
+
+    box-shadow:
+        0 0.25rem 1rem
+        rgba(0,0,0,0.15);
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                180px,
+                1fr
+            )
+        );
+
+    gap:1rem;
+
+    margin-bottom:1.5rem;
+
+}
+
+.filtros-reportes select,
+.filtros-reportes input{
+
+    padding:0.8rem;
+    border:1px solid #CCC;
+    border-radius:0.6rem;
+
+}
+
+#btnGenerarReporte{
+
+    border:none;
+    border-radius:0.7rem;
+    background:#4682B4;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+
+}
+
+#btnGenerarReporte:hover{
+
+    background:#5A9BD5;
+
+}
+
+/* ==========================
+   RESUMEN
+========================== */
+
+.resumen-reportes{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                180px,
+                1fr
+            )
+        );
+
+    gap:1rem;
+
+    margin-bottom:1.5rem;
+
+}
+
+.card-reporte{
+
+    background:white;
+    padding:1.2rem;
+    border-radius:1rem;
+    text-align:center;
+
+    box-shadow:
+        0 0.25rem 1rem
+        rgba(0,0,0,0.15);
+
+}
+
+.card-reporte h3{
+
+    color:#3B6EA5;
+    margin-bottom:0.5rem;
+    font-size:1rem;
+
+}
+
+.card-reporte span{
+
+    font-size:1.6rem;
+    font-weight:bold;
+
+}
+
+/* ==========================
+   TABLA
+========================== */
+
+.tabla-reportes-contenedor{
+
+    background:white;
+    padding:1.5rem;
+    border-radius:1rem;
+
+    box-shadow:
+        0 0.25rem 1rem
+        rgba(0,0,0,0.15);
+
+    overflow:auto;
+
+}
+
+.tabla-reportes-contenedor h3{
+
+    color:#3B6EA5;
+    margin-bottom:1rem;
+
+}
+
+.tabla-reportes{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+.tabla-reportes th{
+
+    background:#4682B4;
+    color:white;
+    padding:0.8rem;
+    white-space:nowrap;
+
+}
+
+.tabla-reportes td{
+
+    padding:0.8rem;
+    text-align:center;
+    border-bottom:1px solid #EEE;
+
+}
+
+.tabla-reportes tr:hover{
+
+    background:#F5F9FF;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+    .reportes-header{
+
+        flex-direction:column;
+        align-items:flex-start;
+
+    }
+
+    .acciones-reportes{
+
+        width:100%;
+
+    }
+
+    .acciones-reportes button{
+
+        flex:1;
+
+    }
+
+}

@@ -1,0 +1,457 @@
+
+<!-- =====================================
+    CABECERA DE VENTA
+===================================== --><div class="ventas-container">
+
+    <div class="ventas-header">
+
+        <h2>
+
+            💰 Punto de Venta
+
+        </h2>
+
+        <div class="ventas-tabs">
+
+    <button id="btnNuevaPestanaVenta">
+
+        +
+
+    </button>
+
+</div>
+
+        <div class="venta-info">
+
+            <span id="fechaVenta">
+
+                00/00/0000
+
+            </span>
+
+            <span id="horaVenta">
+
+                00:00:00
+
+            </span>
+
+            <span id="rolVenta">
+
+    Administrador
+
+</span>
+
+        </div>
+
+    </div>
+
+    <div class="ventas-layout">
+
+    <!-- =====================================
+    PANEL IZQUIERDO
+===================================== -->
+
+        <section class="ventas-principal">
+        
+        <!-- =====================================
+    DATOS DE LA VENTA
+===================================== -->
+
+            <div class="datos-venta">
+
+    <h3 id="tituloVenta">
+
+    🧾 Datos de la Venta - Venta 1
+
+</h3>
+
+<!-- =====================================
+    BUSCADOR DE PRODUCTOS
+===================================== -->
+
+    <div class="busqueda-productos">
+
+        
+        <div class="campo-busqueda">
+
+            <label>
+
+                🔎 Buscar Producto
+
+            </label>
+
+            <input
+                type="text"
+                id="buscarProducto"
+                placeholder="Buscar por nombre o código"
+                autocomplete="off"
+            >
+<!-- =====================================
+    MODAL BUSCADOR DE PRODUCTOS
+===================================== -->
+
+<div
+    id="modalBusqueda"
+    class="modal-busqueda"
+>
+
+    <div class="modal-busqueda-contenido">
+
+        <div class="modal-busqueda-header">
+
+            <h3>
+
+                Buscar Producto
+
+            </h3>
+
+            <button id="cerrarBusqueda">
+
+                ✕
+
+            </button>
+
+        </div>
+
+        <table class="tabla-busqueda">
+
+            <thead>
+
+                <tr>
+
+                    <th>Código</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="listaSugerencias">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+        </div>
+
+        <button id="btnBuscarProducto">
+
+            Buscar
+
+        </button>
+
+    </div>
+
+    <!-- =====================================
+    CLIENTE
+===================================== -->
+    <div class="cliente-venta">
+
+        <label>
+
+            👤 Cliente
+
+        </label>
+
+        <select id="clienteVenta">
+
+            <option>
+
+                Consumidor Final
+
+            </option>
+
+        </select>
+
+    </div>
+    <!-- =====================================
+    MÉTODO DE PAGO
+===================================== -->
+<div class="metodo-pago">
+
+    <label>
+
+        💳 Método de Pago
+
+    </label>
+
+    <select id="metodoPago">
+
+        <option value="Efectivo">
+
+            Efectivo
+
+        </option>
+
+        <option value="MercadoPago">
+
+            Transferencia / Mercado Pago
+
+        </option>
+
+        <option value="Tarjeta">
+
+            Tarjeta
+
+        </option>
+
+        <option value="Mixto">
+
+            Mixto
+
+        </option>
+
+    </select>
+
+</div>
+
+<div
+    id="contenedorMetodoMixto"
+    class="metodo-mixto"
+    style="display:none;"
+>
+
+    <label>
+
+        🔀 Combinación
+
+    </label>
+
+    <select id="tipoMixto">
+
+        <option value="EfectivoTarjeta">
+
+            Efectivo + Tarjeta
+
+        </option>
+
+        <option value="EfectivoMercadoPago">
+
+            Efectivo + Mercado Pago
+
+        </option>
+
+    </select>
+
+</div>
+</div>
+<!-- =====================================
+    TABLA DE PRODUCTOS
+===================================== -->
+
+            <div class="tabla-ventas">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Código</th>
+<th>Producto</th>
+<th>Cant.</th>
+<th>Costo</th>
+<th>Precio</th>
+<th>IVA</th>
+<th>Desc.</th>
+<th>Subtotal</th>
+<th>Quitar</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="detalleVenta">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+<!-- =====================================
+    PANEL DERECHO
+===================================== -->
+
+        <aside class="resumen-venta">
+
+<!-- =====================================
+    RESUMEN DE VENTA
+===================================== -->
+            <div class="card-resumen">
+
+                <h3>
+
+                    Resumen
+
+                </h3>
+
+                <div class="dato-resumen">
+
+                    <span>
+
+                        Items
+
+                    </span>
+
+                    <strong id="cantidadItems">
+
+                        0
+
+                    </strong>
+
+                </div>
+
+                <div class="dato-resumen">
+
+                    <span>
+
+                        Subtotal
+
+                    </span>
+
+                    <strong id="subtotalVenta">
+
+                        $0.00
+
+                    </strong>
+
+                </div>
+
+                <div class="dato-resumen">
+
+                    <span>
+
+                        Descuento
+
+                    </span>
+
+                    <strong id="descuentoVenta">
+
+                        $0.00
+
+                    </strong>
+
+                </div>
+
+                <div class="dato-resumen">
+
+                    <span>
+
+                        IVA
+
+                    </span>
+
+                    <strong id="ivaVenta">
+
+                        $0.00
+
+                    </strong>
+
+                </div>
+
+                <div class="dato-resumen">
+
+                    <span>
+
+                        Total
+
+                    </span>
+
+                    <strong
+                        id="totalVenta"
+                        class="total-final"
+                    >
+
+                        $0.00
+
+                    </strong>
+
+                </div>
+
+            </div>
+<!-- =====================================
+    ACCIONES DE VENTA
+===================================== -->
+            <div class="acciones-venta">
+
+                <button id="btnCobrar">
+
+                    💵 Cobrar
+
+                </button>
+
+                <button id="btnCancelarVenta">
+
+                    ❌ Cancelar
+
+                </button>
+
+                <button id="btnNuevaVenta">
+
+                    ➕ Nueva Venta
+
+                </button>
+
+                <button id="btnAnularVenta">
+
+                    🚫 Anular
+
+                </button>
+                <button id="btnImprimirTicket">
+
+    🖨 Imprimir Ticket
+
+</button>
+
+            </div>
+
+<!-- =====================================
+    ACCESOS RÁPIDOS
+===================================== -->
+
+            <div class="accesos-rapidos">
+
+                <h3>
+
+                    Accesos Rápidos
+
+                </h3>
+
+                <button>
+
+                    🥤 Bebidas
+
+                </button>
+
+                <button>
+
+                    🍫 Golosinas
+
+                </button>
+
+                <button>
+
+                    🚬 Cigarrillos
+
+                </button>
+
+                <button>
+
+                    🍪 Snacks
+
+                </button>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</div>
+

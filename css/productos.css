@@ -1,0 +1,428 @@
+.productos-container {
+
+    width: 100%;
+
+}
+
+/* ==========================
+   ENCABEZADO
+========================== */
+
+.encabezado-productos {
+
+    margin-bottom: 1.5rem;
+
+}
+
+.encabezado-productos h2 {
+
+    color: #3B6EA5;
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+
+}
+
+.encabezado-productos p {
+
+    font-weight: bold;
+    color: #555;
+
+}
+
+.encabezado-productos span {
+
+    color: #777;
+
+}
+
+/* ==========================
+   TARJETAS
+========================== */
+
+.card-producto,
+.card-busqueda,
+.tabla-productos-contenedor {
+
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+
+    box-shadow:
+        0 0.25rem 1rem
+        rgba(0, 0, 0, 0.15);
+
+    margin-bottom: 1.5rem;
+
+}
+
+/* ==========================
+   FORMULARIO PRODUCTOS
+========================== */
+
+.card-producto h3 {
+
+    color: #3B6EA5;
+    margin-bottom: 1rem;
+
+}
+
+#formProducto {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(220px, 1fr)
+        );
+
+    gap: 1rem;
+
+}
+
+#formProducto input,
+#formProducto select {
+
+    padding: 0.85rem;
+
+    border: 1px solid #CCC;
+
+    border-radius: 0.7rem;
+
+    font-size: 0.95rem;
+
+}
+
+#btnGuardarProducto {
+
+    background: #4682B4;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 0.7rem;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    padding: 0.9rem;
+
+    width: 280px;
+
+    justify-self: center;
+
+    grid-column: 1 / -1;
+
+}
+
+#btnGuardarProducto:hover {
+
+    background: #5A9BD5;
+
+    transform: translateY(-2px);
+    justify-self: center;
+
+}
+
+
+/* ==========================
+    BÚSQUEDA
+========================== */
+
+.form-busqueda {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.8rem;
+
+    flex-wrap: wrap;
+
+}
+
+.form-busqueda input {
+
+    flex: 1;
+
+    min-width: 250px;
+
+    padding: 0.85rem;
+
+    border: 1px solid #CCC;
+
+    border-radius: 0.7rem;
+
+    font-size: 0.95rem;
+
+}
+
+.form-busqueda button {
+
+    padding: 0.8rem 1.2rem;
+
+    border: none;
+
+    border-radius: 0.7rem;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+}
+
+.btnBuscar {
+
+    background: #4682B4;
+
+    color: white;
+
+}
+
+.btnBuscar:hover {
+
+    background: #5A9BD5;
+
+    transform: translateY(-2px);
+
+}
+
+.btnLimpiar {
+
+    background: #E5E7EB;
+
+    color: #374151;
+
+}
+
+.btnLimpiar:hover {
+
+    background: #D1D5DB;
+
+    transform: translateY(-2px);
+
+}
+
+/* ==========================
+   TABLA PRODUCTOS
+========================== */
+
+.tabla-productos-contenedor h3 {
+
+    color: #3B6EA5;
+
+    margin-bottom: 1rem;
+
+}
+
+#tablaProductos {
+
+    width: 100%;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    overflow: hidden;
+
+    border-radius: 1rem;
+
+}
+
+#tablaProductos th {
+
+    background: #4682B4;
+
+    color: white;
+
+    padding: 0.75rem;
+
+    font-size: 0.95rem;
+
+    text-align: center;
+
+}
+
+#tablaProductos th:first-child {
+
+    border-top-left-radius: 1rem;
+
+}
+
+#tablaProductos th:last-child {
+
+    border-top-right-radius: 1rem;
+
+}
+
+#tablaProductos td {
+
+    padding: 0.65rem;
+
+    font-size: 0.9rem;
+
+    text-align: center;
+
+    border-bottom: 1px solid #EEE;
+
+}
+
+#tablaProductos tbody tr:nth-child(even) {
+
+    background: #F8FAFC;
+
+}
+
+#tablaProductos tbody tr:hover {
+
+    background: #EAF3FF;
+
+}
+
+/* ==========================
+   BOTONES TABLA
+========================== */
+
+.btnEditarProducto {
+
+    background: #FACC15;
+
+    border: none;
+
+    border-radius: 0.4rem;
+
+    padding: 0.45rem 0.8rem;
+
+    cursor: pointer;
+
+    font-size: 0.85rem;
+
+    font-weight: bold;
+
+}
+
+.btnEditarProducto:hover {
+
+    background: #EAB308;
+
+}
+
+.btnDesactivarProducto {
+
+    background: #EF4444;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 0.4rem;
+
+    padding: 0.45rem 0.8rem;
+
+    cursor: pointer;
+
+    font-size: 0.85rem;
+
+    font-weight: bold;
+
+}
+
+.btnDesactivarProducto:hover {
+
+    background: #DC2626;
+
+}
+
+.btnActivarProducto {
+
+    background: #22C55E;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 0.4rem;
+
+    padding: 0.45rem 0.8rem;
+
+    cursor: pointer;
+
+    font-size: 0.85rem;
+
+    font-weight: bold;
+
+}
+
+.btnActivarProducto:hover {
+
+    background: #16A34A;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 768px) {
+
+    .form-busqueda {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+    .form-busqueda button {
+
+        width: 100%;
+
+    }
+
+}
+.nombreProductoTabla{
+
+    max-width:180px;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+
+}
+
+#tablaProductos td:last-child{
+
+    white-space:nowrap;
+
+}
+
+.btnEditarProducto,
+.btnDesactivarProducto,
+.btnActivarProducto{
+
+    display:inline-block;
+
+    margin:0 0.2rem;
+
+}
+
+#tablaProductos {
+
+    border-collapse: collapse;
+
+}
+
+#tablaProductos th,
+#tablaProductos td {
+
+    border: 1px solid #E5E7EB;
+
+}

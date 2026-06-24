@@ -1,0 +1,222 @@
+.caja-container{
+
+    width:100%;
+
+}
+
+.caja-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:1rem;
+    flex-wrap:wrap;
+    gap:1rem;
+
+}
+
+.caja-header h2{
+
+    color:#3B6EA5;
+
+}
+
+.caja-header p{
+
+    color:#666;
+
+}
+
+.acciones-caja{
+
+    display:flex;
+    align-items:center;
+    gap:1rem;
+
+}
+
+.estado-caja-abierta{
+
+    background:#E8F8EC;
+    color:#2E8B57;
+    padding:0.6rem 1rem;
+    border-radius:2rem;
+    font-weight:bold;
+
+}
+
+.acciones-caja button{
+
+    padding:0.8rem 1rem;
+    border:none;
+    border-radius:0.7rem;
+    background:#4682B4;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+
+}
+
+.resumen-caja,
+.metodos-pago{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1rem;
+    margin-bottom:1rem;
+
+}
+
+.card-caja,
+.card-metodo{
+
+    background:white;
+    padding:1rem;
+    border-radius:1rem;
+    text-align:center;
+    box-shadow:0 0.2rem 0.8rem rgba(0,0,0,0.12);
+
+}
+
+.card-caja h3,
+.card-metodo h4{
+
+    color:#3B6EA5;
+    margin-bottom:0.5rem;
+
+}
+
+.card-caja span,
+.card-metodo span{
+
+    font-size:1.6rem;
+    font-weight:bold;
+
+}
+
+.movimiento-caja,
+.tabla-caja-contenedor,
+.cierre-caja{
+
+    background:white;
+    padding:1.2rem;
+    border-radius:1rem;
+    margin-bottom:1rem;
+    box-shadow:0 0.2rem 0.8rem rgba(0,0,0,0.12);
+
+}
+
+.movimiento-caja h3,
+.tabla-caja-contenedor h3,
+.cierre-caja h3{
+
+    color:#3B6EA5;
+    margin-bottom:1rem;
+
+}
+
+.formulario-movimiento{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:1rem;
+
+}
+
+.formulario-movimiento select,
+.formulario-movimiento input{
+
+    padding:0.8rem;
+    border:1px solid #CCC;
+    border-radius:0.5rem;
+
+}
+
+.formulario-movimiento button{
+
+    border:none;
+    border-radius:0.5rem;
+    background:#4682B4;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+
+}
+
+.tabla-caja{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+.tabla-caja th{
+
+    background:#3B6EA5;
+    color:white;
+    padding:0.8rem;
+
+}
+
+.tabla-caja td{
+
+    padding:0.8rem;
+    text-align:center;
+    border-bottom:1px solid #EEE;
+
+}
+
+.datos-cierre{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1rem;
+
+}
+
+.datos-cierre label{
+
+    display:block;
+    margin-bottom:0.5rem;
+    font-weight:bold;
+
+}
+
+.datos-cierre input{
+
+    width:100%;
+    padding:0.8rem;
+    border:1px solid #CCC;
+    border-radius:0.5rem;
+
+}
+
+@media(max-width:768px){
+
+    .resumen-caja,
+    .metodos-pago,
+    .datos-cierre{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/* ===========================
+    ESTADO CAJA
+=========================== */
+
+.estado-caja-cerrada{
+
+    background:#FDECEC;
+
+    color:#C62828;
+
+    padding:0.6rem 1rem;
+
+    border-radius:999px;
+
+    font-weight:600;
+
+}
